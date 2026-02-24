@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oneZipp — Workflow Automation, Engineered for Your Industry</title>
+    <meta name="description" content="oneZipp designs and builds custom workflow automation systems for HR, Tech, Finance, Legal, Healthcare, Construction and more. Live in 2 weeks. No lock-in.">
+    <meta property="og:title" content="oneZipp — Workflow Automation Agency">
+    <meta property="og:description" content="Custom automation systems for 10 industries. Data-driven. No lock-in. Live in 2 weeks.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-red: #D83030;
+            --brand-red-hover: #E23C1B;
+            --brand-navy: #032E42;
+            --brand-dark: #0a0a0a;
+            --brand-black: #101010;
+            --body-bg: #FFFFFF;
+            --section-alt: #F8F9FA;
+            --card-border: rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+            --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+            --text-primary: #0a0a0a;
+            --text-secondary: #363636;
+            --text-muted: #6B7280;
+            --border-light: #EDEDED;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--body-bg);
+            color: var(--text-primary);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ============================
+           LAYOUT
+           ============================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* ============================
+           TOP TOOLBAR (thin bar)
+           ============================ */
+        .top-toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1002;
+            background: var(--brand-navy);
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .top-toolbar-inner {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toolbar-left a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            transition: opacity 0.2s ease;
+        }
+
+        .toolbar-left a:hover {
+            opacity: 0.8;
+        }
+
+        .toolbar-left svg {
+            flex-shrink: 0;
+        }
+
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .toolbar-phone {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s ease;
+        }
+
+        .toolbar-phone:hover {
+            opacity: 0.8;
+        }
+
+        .toolbar-social {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toolbar-social a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: opacity 0.2s ease;
+        }
+
+        .toolbar-social a:hover {
+            opacity: 0.7;
+        }
+
+        /* ============================
+           MAIN NAVIGATION (white)
+           ============================ */
+        .main-nav {
+            position: fixed;
+            top: 36px;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            background: #FFFFFF;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .main-nav.scrolled {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-nav-inner {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo img {
+            height: 25px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #101010;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #D83030;
+        }
+
+        .nav-links .dropdown-toggle {
+            cursor: pointer;
+        }
+
+        .nav-links .dropdown-toggle svg {
+            transition: transform 0.2s ease;
+        }
+
+        .nav-links li:hover .dropdown-toggle svg {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 16px;
+            background: #fff;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            min-width: 220px;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease, margin-top 0.2s ease;
+            z-index: 100;
+        }
+
+        .nav-links li:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            margin-top: 8px;
+        }
+
+        .nav-dropdown a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: none;
+            color: var(--text-primary);
+            letter-spacing: 0;
+        }
+
+        .nav-dropdown a:hover {
+            background: var(--section-alt);
+            color: var(--brand-red);
+        }
+
+        .nav-cta {
+            background: var(--brand-red) !important;
+            color: #fff !important;
+            padding: 10px 24px !important;
+            border-radius: 9999px !important;
+            text-transform: uppercase !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.3px !important;
+            transition: background 0.2s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--brand-red-hover) !important;
+            color: #fff !important;
+        }
+
+        .nav-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav-mobile-toggle svg {
+            display: block;
+        }
+
+        /* ============================
+           HERO
+           ============================ */
+        .hero {
+            padding-top: 168px;
+            padding-bottom: 100px;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(216, 48, 48, 0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--brand-red);
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.12;
+            color: var(--brand-dark);
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 480px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--brand-red);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-red-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(216, 48, 48, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--brand-navy);
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid var(--brand-navy);
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--brand-navy);
+            color: #fff;
+        }
+
+        /* ANIMATION PLACEHOLDER */
+        .hero-animation {
+            min-height: 480px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(3, 46, 66, 0.04) 0%, rgba(216, 48, 48, 0.03) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid var(--card-border);
+        }
+
+        .hero-animation-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* ============================
+           SOCIAL PROOF BAR
+           ============================ */
+        .social-proof {
+            background: var(--section-alt);
+            padding: 48px 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .social-proof-label {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 32px;
+        }
+
+        .logos-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 36px;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        /* ============================
+           SECTION HEADINGS
+           ============================ */
+        .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 64px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--brand-dark);
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* ============================
+           INDUSTRY SERVICES GRID
+           ============================ */
+        .industries {
+            background: var(--body-bg);
+        }
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .industry-card {
+            background: #fff;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 32px;
+            display: flex;
+            gap: 20px;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.25s ease, transform 0.2s ease;
+            scroll-margin-top: 130px;
+        }
+
+        .industry-card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .industry-accent-bar {
+            width: 4px;
+            min-height: 100%;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .accent-red { background: #D83030; }
+        .accent-navy { background: #032E42; }
+        .accent-blue { background: #2563EB; }
+        .accent-amber { background: #D97706; }
+        .accent-rose { background: #E11D48; }
+        .accent-teal { background: #0D9488; }
+        .accent-orange { background: #EA580C; }
+        .accent-cyan { background: #0891B2; }
+        .accent-indigo { background: #4338CA; }
+        .accent-emerald { background: #059669; }
+
+        .industry-content {
+            flex: 1;
+        }
+
+        .industry-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .industry-content .industry-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .industry-services-list {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+
+        .industry-services-list li {
+            font-size: 14px;
+            color: var(--text-primary);
+            padding: 3px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .industry-services-list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--brand-red);
+            flex-shrink: 0;
+            opacity: 0.6;
+        }
+
+        .industry-link {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brand-red);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .industry-link:hover {
+            opacity: 0.7;
+        }
+
+        /* ============================
+           HOW IT WORKS
+           ============================ */
+        .how-it-works {
+            background: var(--section-alt);
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: calc(12.5% + 24px);
+            right: calc(12.5% + 24px);
+            height: 2px;
+            background: var(--border-light);
+        }
+
+        .timeline-step {
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--brand-red);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-step h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .timeline-step p {
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        /* ============================
+           WHY ONEZIPP
+           ============================ */
+        .why-section {
+            background: var(--body-bg);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .value-card {
+            background: #fff;
+            border: 1px solid var(--card-border);
+            border-top: 3px solid var(--brand-red);
+            border-radius: 8px;
+            padding: 36px 32px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .value-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* ============================
+           CONTACT / CTA
+           ============================ */
+        .cta-section {
+            background: var(--brand-navy);
+            color: #fff;
+        }
+
+        .cta-section .section-header h2 {
+            color: #fff;
+        }
+
+        .cta-section .section-header p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .contact-form {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+            padding: 12px 16px;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--brand-red);
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='rgba(255,255,255,0.5)' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+        }
+
+        .form-group select option {
+            background: var(--brand-navy);
+            color: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-actions {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .btn-cta-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--brand-red);
+            color: #fff;
+            padding: 14px 40px;
+            border-radius: 9999px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+
+        .btn-cta-submit:hover {
+            background: var(--brand-red-hover);
+            transform: translateY(-1px);
+        }
+
+        .form-alt {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .form-alt a {
+            color: var(--brand-red);
+            text-decoration: none;
+        }
+
+        .form-alt a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================
+           FOOTER
+           ============================ */
+        .footer {
+            background: #021824;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 32px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-logo img {
+            height: 22px;
+            width: auto;
+            display: block;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-email a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-email a:hover {
+            color: var(--brand-red);
+        }
+
+        /* ============================
+           SCROLL ANIMATIONS
+           ============================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================
+           RESPONSIVE: TABLET
+           ============================ */
+        @media (max-width: 768px) {
+            .top-toolbar {
+                height: 32px;
+            }
+
+            .toolbar-right {
+                display: none;
+            }
+
+            .main-nav {
+                top: 32px;
+                height: 60px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-mobile-toggle {
+                display: block;
+            }
+
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--border-light);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            }
+
+            .nav-links.open .nav-dropdown {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                opacity: 1;
+                visibility: visible;
+                margin-top: 0;
+                padding: 0 0 0 16px;
+            }
+
+            .hero {
+                padding-top: 148px;
+                padding-bottom: 64px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-animation {
+                min-height: 320px;
+            }
+
+            .industry-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .timeline::before {
+                top: 0;
+                bottom: 0;
+                left: 24px;
+                right: auto;
+                width: 2px;
+                height: auto;
+            }
+
+            .timeline-step {
+                text-align: left;
+                padding-left: 72px;
+                padding-right: 0;
+            }
+
+            .step-number {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-left {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .section-padding {
+                padding: 72px 0;
+            }
+
+            .logos-row {
+                gap: 24px;
+            }
+        }
+
+        /* ============================
+           RESPONSIVE: MOBILE
+           ============================ */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 30px;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .hero-animation {
+                min-height: 240px;
+            }
+
+            .industry-card {
+                padding: 24px;
+            }
+
+            .section-header h2 {
+                font-size: 24px;
+            }
+
+            .section-padding {
+                padding: 56px 0;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .value-card {
+                padding: 28px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================
+     TOP TOOLBAR (thin navy bar)
+     ============================ -->
+<div class="top-toolbar">
+    <div class="top-toolbar-inner">
+        <div class="toolbar-left">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:hello@onezipp.com">hello@onezipp.com</a>
+        </div>
+        <div class="toolbar-right">
+            <a href="tel:+1234567890" class="toolbar-phone">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (123) 456-7890
+            </a>
+            <div class="toolbar-social">
+                <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                <a href="#" aria-label="Twitter"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================
+     MAIN NAVIGATION (white bar)
+     ============================ -->
+<nav class="main-nav" id="main-nav">
+    <div class="main-nav-inner">
+        <a href="#" class="nav-logo">
+            <img src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="oneZipp" />
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li>
+                <a href="#services" class="dropdown-toggle">INDUSTRIES <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <div class="nav-dropdown">
+                    <a href="industries/hr-recruitment.html">HR & Recruitment</a>
+                    <a href="industries/tech-it.html">Tech & IT</a>
+                    <a href="industries/marketing-growth.html">Marketing & Growth</a>
+                    <a href="industries/finance-accounting.html">Finance & Accounting</a>
+                    <a href="industries/legal.html">Legal</a>
+                    <a href="industries/construction.html">Construction</a>
+                    <a href="industries/electrical-trades.html">Electrical & Trades</a>
+                    <a href="industries/healthcare.html">Healthcare</a>
+                    <a href="industries/ecommerce.html">eCommerce</a>
+                    <a href="industries/real-estate.html">Real Estate</a>
+                </div>
+            </li>
+            <li><a href="#process">PROCESS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+        </ul>
+        <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#101010" stroke-width="2" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<!-- ============================
+     HERO SECTION
+     ============================ -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <p class="hero-eyebrow">Scaling Simplicity. Automating Intelligence.</p>
+                <h1 class="hero-title">Workflow automation,<br>engineered for your<br>industry</h1>
+                <p class="hero-subtitle">We design and build custom automation systems for HR, Tech, Finance, Legal, Healthcare and more. Data-driven. No lock-in. Live in 2 weeks.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Book a Discovery Call</a>
+                    <a href="#services" class="btn-secondary">See Our Services</a>
+                </div>
+            </div>
+            <div>
+                <!-- ANIMATION PLACEHOLDER: Replace this div's contents with your Lottie/video/SVG animation -->
+                <div class="hero-animation" id="hero-animation">
+                    <span class="hero-animation-label">Animation Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     SOCIAL PROOF BAR
+     ============================ -->
+<section class="social-proof">
+    <div class="container">
+        <p class="social-proof-label">Trusted by teams automating across industries</p>
+        <div class="logos-row">
+            <div class="logo-placeholder">Company 1</div>
+            <div class="logo-placeholder">Company 2</div>
+            <div class="logo-placeholder">Company 3</div>
+            <div class="logo-placeholder">Company 4</div>
+            <div class="logo-placeholder">Company 5</div>
+            <div class="logo-placeholder">Company 6</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     INDUSTRY SERVICES GRID
+     ============================ -->
+<section class="industries section-padding" id="services">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>Automation services built for your industry</h2>
+            <p>We analyzed hundreds of real automation requirements to build targeted service packages for each industry.</p>
+        </div>
+        <div class="industry-grid">
+
+            <!-- HR & Recruitment -->
+            <div class="industry-card fade-in" id="card-hr">
+                <div class="industry-accent-bar accent-red"></div>
+                <div class="industry-content">
+                    <h3>HR & Recruitment</h3>
+                    <p class="industry-desc">Automate repetitive hiring tasks and employee lifecycle workflows so your team can focus on people, not paperwork.</p>
+                    <ul class="industry-services-list">
+                        <li>Resume screening and ATS integration</li>
+                        <li>Onboarding workflow automation</li>
+                        <li>Payroll and job posting distribution</li>
+                    </ul>
+                    <a href="industries/hr-recruitment.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Tech & IT -->
+            <div class="industry-card fade-in" id="card-tech">
+                <div class="industry-accent-bar accent-blue"></div>
+                <div class="industry-content">
+                    <h3>Tech & IT</h3>
+                    <p class="industry-desc">Streamline DevOps, infrastructure management, and internal tooling with end-to-end automation pipelines.</p>
+                    <ul class="industry-services-list">
+                        <li>CI/CD pipelines and cloud infrastructure</li>
+                        <li>Monitoring, alerts, and API integrations</li>
+                        <li>Helpdesk automation</li>
+                    </ul>
+                    <a href="industries/tech-it.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Marketing & Growth -->
+            <div class="industry-card fade-in" id="card-marketing">
+                <div class="industry-accent-bar accent-rose"></div>
+                <div class="industry-content">
+                    <h3>Marketing & Growth</h3>
+                    <p class="industry-desc">Automate your marketing engine from lead capture through nurture sequences to performance reporting dashboards.</p>
+                    <ul class="industry-services-list">
+                        <li>Social scheduling and lead nurture</li>
+                        <li>Email sequences and reporting dashboards</li>
+                        <li>Content repurposing workflows</li>
+                    </ul>
+                    <a href="industries/marketing-growth.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Finance & Accounting -->
+            <div class="industry-card fade-in" id="card-finance">
+                <div class="industry-accent-bar accent-amber"></div>
+                <div class="industry-content">
+                    <h3>Finance & Accounting</h3>
+                    <p class="industry-desc">Reduce manual data entry and close your books faster with automated invoicing, reconciliation, and reporting.</p>
+                    <ul class="industry-services-list">
+                        <li>Invoice processing and expense categorization</li>
+                        <li>Bank reconciliation and financial reporting</li>
+                        <li>Accounts receivable follow-up</li>
+                    </ul>
+                    <a href="industries/finance-accounting.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Legal -->
+            <div class="industry-card fade-in" id="card-legal">
+                <div class="industry-accent-bar accent-indigo"></div>
+                <div class="industry-content">
+                    <h3>Legal</h3>
+                    <p class="industry-desc">Accelerate contract lifecycles and ensure compliance deadlines are never missed with intelligent automation.</p>
+                    <ul class="industry-services-list">
+                        <li>Contract review and NDA routing</li>
+                        <li>Deadline tracking and client intake</li>
+                        <li>Legal research automation</li>
+                    </ul>
+                    <a href="industries/legal.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Construction -->
+            <div class="industry-card fade-in" id="card-construction">
+                <div class="industry-accent-bar accent-orange"></div>
+                <div class="industry-content">
+                    <h3>Construction</h3>
+                    <p class="industry-desc">Keep projects on track with automated status updates, permit workflows, and subcontractor coordination.</p>
+                    <ul class="industry-services-list">
+                        <li>Project status tracking and permit filing</li>
+                        <li>Subcontractor coordination and bid automation</li>
+                        <li>Safety compliance workflows</li>
+                    </ul>
+                    <a href="industries/construction.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Electrical & Trades -->
+            <div class="industry-card fade-in" id="card-electrical">
+                <div class="industry-accent-bar accent-teal"></div>
+                <div class="industry-content">
+                    <h3>Electrical & Trades</h3>
+                    <p class="industry-desc">Digitize field operations from quoting through dispatch with automation tailored for trade businesses.</p>
+                    <ul class="industry-services-list">
+                        <li>Job quoting and compliance scheduling</li>
+                        <li>Inventory tracking and digital job cards</li>
+                        <li>Dispatch and scheduling automation</li>
+                    </ul>
+                    <a href="industries/electrical-trades.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Healthcare -->
+            <div class="industry-card fade-in" id="card-healthcare">
+                <div class="industry-accent-bar accent-cyan"></div>
+                <div class="industry-content">
+                    <h3>Healthcare</h3>
+                    <p class="industry-desc">Improve patient experience and reduce administrative burden with automated scheduling, billing, and intake workflows.</p>
+                    <ul class="industry-services-list">
+                        <li>Appointment reminders and patient intake</li>
+                        <li>Medical billing and referral tracking</li>
+                        <li>Staff scheduling automation</li>
+                    </ul>
+                    <a href="industries/healthcare.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+            <!-- eCommerce -->
+            <div class="industry-card fade-in" id="card-ecommerce">
+                <div class="industry-accent-bar accent-emerald"></div>
+                <div class="industry-content">
+                    <h3>eCommerce</h3>
+                    <p class="industry-desc">Automate your storefront operations from order fulfillment to customer engagement so you can scale without scaling headcount.</p>
+                    <ul class="industry-services-list">
+                        <li>Order management and inventory sync</li>
+                        <li>Return processing and review responses</li>
+                        <li>Abandoned cart recovery</li>
+                    </ul>
+                    <a href="industries/ecommerce.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Real Estate -->
+            <div class="industry-card fade-in" id="card-realestate">
+                <div class="industry-accent-bar accent-navy"></div>
+                <div class="industry-content">
+                    <h3>Real Estate</h3>
+                    <p class="industry-desc">Close more deals with automated lead follow-up, listing syndication, and streamlined transaction management.</p>
+                    <ul class="industry-services-list">
+                        <li>Lead follow-up and listing syndication</li>
+                        <li>Document signing and CRM pipeline</li>
+                        <li>Open house follow-up automation</li>
+                    </ul>
+                    <a href="industries/real-estate.html" class="industry-link">View all services &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     HOW IT WORKS
+     ============================ -->
+<section class="how-it-works section-padding" id="process">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>From first call to live automation in 14 days</h2>
+        </div>
+        <div class="timeline fade-in">
+            <div class="timeline-step">
+                <div class="step-number">1</div>
+                <h3>Discover</h3>
+                <p>Free 30-min call to map your workflows and identify the highest-impact automations.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="step-number">2</div>
+                <h3>Design</h3>
+                <p>Detailed automation blueprint with workflow diagrams and tool recommendations.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="step-number">3</div>
+                <h3>Build</h3>
+                <p>We build, test, and iterate using n8n, Make, or Zapier -- whichever fits your stack.</p>
+            </div>
+            <div class="timeline-step">
+                <div class="step-number">4</div>
+                <h3>Deploy</h3>
+                <p>Go live with 30 days of free support. Your automation runs 24/7.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     WHY ONEZIPP
+     ============================ -->
+<section class="why-section section-padding" id="why">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>Why oneZipp</h2>
+        </div>
+        <div class="value-grid">
+            <div class="value-card fade-in">
+                <h3>Live in 2 weeks</h3>
+                <p>Most automations ship in under 14 days. We move fast because we have built for 10+ industries and know the patterns that work.</p>
+            </div>
+            <div class="value-card fade-in">
+                <h3>No lock-in</h3>
+                <p>No contracts. No hidden fees. You own every workflow. Full documentation and handover included with every project.</p>
+            </div>
+            <div class="value-card fade-in">
+                <h3>Data-driven</h3>
+                <p>We analyzed 500+ real job postings to understand what businesses need. Our services reflect actual market demand, not guesswork.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================
+     CONTACT / CTA SECTION
+     ============================ -->
+<section class="cta-section section-padding" id="contact">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>Ready to automate?</h2>
+            <p>Book a free 30-minute discovery call. We will map your workflows and show you exactly what we would automate.</p>
+        </div>
+        <form class="contact-form fade-in" action="https://formspree.io/f/XXXXX" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label for="industry">Industry</label>
+                    <select id="industry" name="industry" required>
+                        <option value="" disabled selected>Select your industry</option>
+                        <option value="HR & Recruitment">HR & Recruitment</option>
+                        <option value="Tech & IT">Tech & IT</option>
+                        <option value="Marketing & Growth">Marketing & Growth</option>
+                        <option value="Finance & Accounting">Finance & Accounting</option>
+                        <option value="Legal">Legal</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Electrical & Trades">Electrical & Trades</option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="eCommerce">eCommerce</option>
+                        <option value="Real Estate">Real Estate</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about the workflows you want to automate..."></textarea>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-cta-submit">Book Discovery Call</button>
+            </div>
+            <p class="form-alt">Or email us directly at <a href="mailto:hello@onezipp.com">hello@onezipp.com</a></p>
+        </form>
+    </div>
+</section>
+
+<!-- ============================
+     FOOTER
+     ============================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <a href="#" class="footer-logo">
+                    <img src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="oneZipp" />
+                </a>
+                <span class="footer-copy">&copy; 2026 oneZipp. All rights reserved.</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#why">About</a></li>
+            </ul>
+            <div class="footer-email">
+                <a href="mailto:hello@onezipp.com">hello@onezipp.com</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================
+     SCRIPTS
+     ============================ -->
+<script>
+    // Mobile nav toggle
+    (function () {
+        var toggle = document.getElementById('nav-toggle');
+        var links = document.getElementById('nav-links');
+        if (toggle && links) {
+            toggle.addEventListener('click', function () {
+                links.classList.toggle('open');
+            });
+            var items = links.querySelectorAll('a');
+            for (var i = 0; i < items.length; i++) {
+                items[i].addEventListener('click', function () {
+                    if (!this.classList.contains('dropdown-toggle')) {
+                        links.classList.remove('open');
+                    }
+                });
+            }
+        }
+    })();
+
+    // Sticky nav shadow on scroll
+    (function () {
+        var nav = document.getElementById('main-nav');
+        if (nav) {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 20) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        }
+    })();
+
+    // Scroll-triggered fade-in
+    (function () {
+        var fadeEls = document.querySelectorAll('.fade-in');
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -40px 0px'
+            });
+            fadeEls.forEach(function (el) {
+                observer.observe(el);
+            });
+        } else {
+            fadeEls.forEach(function (el) {
+                el.classList.add('visible');
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>

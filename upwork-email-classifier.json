@@ -1,0 +1,157 @@
+{
+  "name": "Upwork Email Classifier",
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "2",
+      "name": "Gmail Search",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 1,
+      "position": [
+        460,
+        300
+      ],
+      "credentials": {
+        "gmailOAuth2": "Gmail OAuth2"
+      },
+      "parameters": {
+        "resource": "message",
+        "operation": "getAll",
+        "returnAll": true,
+        "filters": {
+          "q": "from:upwork.com"
+        },
+        "options": {
+          "format": "full"
+        }
+      }
+    },
+    {
+      "id": "3",
+      "name": "Extract Email Fields",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        680,
+        300
+      ],
+      "parameters": {
+        "functionCode": "const output = [];\n\nfor (const item of items) {\n  const headers = item.json.payload?.headers || [];\n  \n  // Extract Subject header\n  const subjectHeader = headers.find(h => h.name === 'Subject');\n  const subject = subjectHeader ? subjectHeader.value : '(No Subject)';\n  \n  // Extract From header\n  const fromHeader = headers.find(h => h.name === 'From');\n  const from = fromHeader ? fromHeader.value : 'unknown';\n  \n  // Extract Date header\n  const dateHeader = headers.find(h => h.name === 'Date');\n  const date = dateHeader ? dateHeader.value : '';\n  \n  // Snippet is already a top-level field from Gmail API\n  const snippet = item.json.snippet || '';\n  \n  // Email ID for reference\n  const emailId = item.json.id || '';\n  \n  output.push({\n    json: {\n      emailId,\n      subject,\n      from,\n      snippet,\n      date\n    }\n  });\n}\n\nreturn output;"
+      }
+    },
+    {
+      "id": "4",
+      "name": "OpenAI Classify",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [
+        900,
+        300
+      ],
+      "credentials": {
+        "openAiApi": "OpenAI account"
+      },
+      "parameters": {
+        "mode": "prompt",
+        "prompt": "You are an automation consultant analyzing Upwork job posting emails.\nGiven a job email subject and snippet, classify it.\n\nSubject: {{$json.subject}}\nSnippet: {{$json.snippet}}\n\nRespond ONLY with a single-line JSON object. Use exactly this format:\n{\"industry\":\"<INDUSTRY>\",\"niche\":\"<NICHE>\"}\n\nINDUSTRY must be one of: HR, Tech/IT, Electrical, Construction, Legal, Marketing, Finance, Healthcare, Education, eCommerce, Real Estate, Other\n\nNICHE is a short phrase (3-8 words) describing the specific automation requirement or job type within that industry.\n\nExamples:\n{\"industry\":\"HR\",\"niche\":\"resume screening automation\"}\n{\"industry\":\"Tech/IT\",\"niche\":\"CI/CD pipeline setup\"}\n{\"industry\":\"Legal\",\"niche\":\"contract review workflow\"}\n{\"industry\":\"Marketing\",\"niche\":\"social media scheduling bot\"}\n{\"industry\":\"Finance\",\"niche\":\"invoice processing automation\"}\n\nNo explanation. No markdown. Just the JSON line.",
+        "temperature": 0,
+        "maxTokens": 60
+      }
+    },
+    {
+      "id": "5",
+      "name": "Map Classification",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        300
+      ],
+      "parameters": {
+        "functionCode": "const item = items[0].json;\n\n// Extract the OpenAI response text\n// Handle both legacy (data.choices[0].text) and newer (completion) response formats\nlet responseText = '';\nif (item.data?.choices && item.data.choices[0]?.text) {\n  responseText = item.data.choices[0].text.trim();\n} else if (item.choices && item.choices[0]?.message?.content) {\n  responseText = item.choices[0].message.content.trim();\n} else if (item.completion) {\n  responseText = item.completion.trim();\n} else if (typeof item.text === 'string') {\n  responseText = item.text.trim();\n}\n\n// Parse the JSON response\nlet industry = 'Unknown';\nlet niche = 'Unknown';\n\ntry {\n  // Clean up the response — sometimes the model wraps in backticks\n  let cleaned = responseText.replace(/```json?/g, '').replace(/```/g, '').trim();\n  const parsed = JSON.parse(cleaned);\n  industry = parsed.industry || 'Unknown';\n  niche = parsed.niche || 'Unknown';\n} catch (e) {\n  // If parsing fails, store the raw response for debugging\n  niche = responseText || 'parse_error';\n}\n\nreturn [{\n  json: {\n    emailId: item.emailId || '',\n    subject: item.subject || '',\n    from: item.from || '',\n    snippet: item.snippet || '',\n    date: item.date || '',\n    industry,\n    niche\n  }\n}];"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Aggregate and Rank",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        300
+      ],
+      "parameters": {
+        "functionCode": "const counters = {};\nconst totalEmails = items.length;\n\n// Step 1: Count all industry + niche pairs\nfor (const item of items) {\n  const industry = item.json.industry || 'Unknown';\n  const niche = item.json.niche || 'Unknown';\n  \n  // Skip unknown and other classifications\n  if (industry === 'Unknown' || industry === 'Other') continue;\n  \n  if (!counters[industry]) counters[industry] = {};\n  if (!counters[industry][niche]) counters[industry][niche] = 0;\n  counters[industry][niche]++;\n}\n\n// Step 2: Sort industries by total email count and rank niches within each\nconst industryTotals = [];\nfor (const industry of Object.keys(counters)) {\n  const nicheMap = counters[industry];\n  const total = Object.values(nicheMap).reduce((sum, val) => sum + val, 0);\n  industryTotals.push({ industry, total, nicheMap });\n}\n\n// Sort industries by total emails descending\nindustryTotals.sort((a, b) => b.total - a.total);\n\n// Step 3: Build output items\nconst output = [];\nfor (const entry of industryTotals) {\n  const sorted = Object.entries(entry.nicheMap)\n    .sort((a, b) => b[1] - a[1])\n    .slice(0, 5)\n    .map(([niche, count], i) => ({ rank: i + 1, niche, count }));\n  \n  output.push({\n    json: {\n      industry: entry.industry,\n      totalEmails: entry.total,\n      percentOfTotal: Math.round((entry.total / totalEmails) * 100),\n      topNiches: sorted\n    }\n  });\n}\n\n// Add a summary item at the end\noutput.push({\n  json: {\n    summary: true,\n    totalEmailsAnalyzed: totalEmails,\n    industriesFound: industryTotals.length,\n    industries: industryTotals.map(e => ({\n      name: e.industry,\n      count: e.total\n    }))\n  }\n});\n\nreturn output;"
+      }
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Gmail Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Search": {
+      "main": [
+        [
+          {
+            "node": "Extract Email Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Email Fields": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Classify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Classify": {
+      "main": [
+        [
+          {
+            "node": "Map Classification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map Classification": {
+      "main": [
+        [
+          {
+            "node": "Aggregate and Rank",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "version": 2
+}

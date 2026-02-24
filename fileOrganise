@@ -1,0 +1,150 @@
+{
+  "name": "AI-Based Folder Watch & Sort",
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Cron Trigger",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "parameters": {
+        "mode": "everyMinute"
+      }
+    },
+    {
+      "id": "2",
+      "name": "List Files",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "command": "ls -1 /data/n8n-shared",
+        "options": {}
+      }
+    },
+    {
+      "id": "3",
+      "name": "Parse Filenames",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        640,
+        300
+      ],
+      "parameters": {
+        "functionCode": "const output = [];\n// The 'List Files' node returns stdout in items[0].json.stdout\n// Split on newlines to get each file name\nif (items[0].json.stdout) {\n  const lines = items[0].json.stdout.split('\\n').filter(line => line.trim() !== '');\n  for (const filename of lines) {\n    output.push({ json: { filename } });\n  }\n}\nreturn output;"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Classify Filename",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [
+        840,
+        300
+      ],
+      "credentials": {
+        "openAiApi": "OpenAI account"
+      },
+      "parameters": {
+        "mode": "prompt",
+        "prompt": "You are a file classification AI. Decide if the filename indicates a PDF, an image, a doc, or something else.\nFilename: {{$json.filename}}\nReturn just one word: \"PDF\", \"image\", \"doc\", or \"unknown\".",
+        "temperature": 0,
+        "maxTokens": 5
+      }
+    },
+    {
+      "id": "5",
+      "name": "Map Classification",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        300
+      ],
+      "parameters": {
+        "functionCode": "const item = items[0].json;\n// The raw AI response is often in item.data.choices[0].text, depending on your n8n version\n// Or item.completion. Adjust if needed.\n\n// Attempt to extract the classification text\nlet classification = \"\";\nif (item.data?.choices && item.data.choices[0]?.text) {\n  classification = item.data.choices[0].text.trim().toLowerCase();\n} else if (item.completion) {\n  classification = item.completion.trim().toLowerCase();\n}\n\n// Default folder is \"misc\"\nlet folder = \"misc\";\n\n// Simplistic mapping\nif (classification.includes(\"pdf\")) folder = \"PDF\";\nif (classification.includes(\"doc\")) folder = \"docs\";\nif (classification.includes(\"image\")) folder = \"Images\";\n\nreturn [{\n  json: {\n    filename: item.filename,\n    classification: classification,\n    folder\n  }\n}];"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Move File",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        300
+      ],
+      "parameters": {
+        "command": "={{\n\"# Create the subfolder if needed\\n\" +\n\"mkdir -p /data/n8n-shared/\" + $json.folder + \"\\n\" +\n\"# Move the file into that subfolder\\n\" +\n\"mv '/data/n8n-shared/\" + $json.filename + \"' '/data/n8n-shared/\" + $json.folder + \"'\"\n}}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Cron Trigger": {
+      "main": [
+        [
+          {
+            "node": "List Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Files": {
+      "main": [
+        [
+          {
+            "node": "Parse Filenames",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Filenames": {
+      "main": [
+        [
+          {
+            "node": "Classify Filename",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Filename": {
+      "main": [
+        [
+          {
+            "node": "Map Classification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map Classification": {
+      "main": [
+        [
+          {
+            "node": "Move File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "version": 2
+}
