@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "onezipp-site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/Users/pratik/Documents/n8n-flows/onezipp/server.js"],
+      "port": 3000
+    }
+  ]
+}
