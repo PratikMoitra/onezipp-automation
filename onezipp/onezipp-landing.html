@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oneZipp — Workflow Automation, Engineered for Your Industry</title>
-    <meta name="description" content="oneZipp designs and builds custom workflow automation systems for HR, Tech, Finance, Legal, Healthcare, Construction and more. Live in 2 weeks. No lock-in.">
-    <meta property="og:title" content="oneZipp — Workflow Automation Agency">
+    <title>Onezipp — Workflow Automation, Engineered for Your Industry</title>
+    <meta name="description" content="Onezipp designs and builds custom workflow automation systems for HR, Tech, Finance, Legal, Healthcare, Construction and more. Live in 2 weeks. No lock-in.">
+    <meta property="og:title" content="Onezipp — Workflow Automation Agency">
     <meta property="og:description" content="Custom automation systems for 10 industries. Data-driven. No lock-in. Live in 2 weeks.">
     <meta property="og:type" content="website">
     <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-red: #D83030;
@@ -19,15 +19,18 @@
             --brand-navy: #032E42;
             --brand-dark: #0a0a0a;
             --brand-black: #101010;
-            --body-bg: #FFFFFF;
-            --section-alt: #F8F9FA;
-            --card-border: rgba(0, 0, 0, 0.08);
-            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-            --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-            --text-primary: #0a0a0a;
-            --text-secondary: #363636;
-            --text-muted: #6B7280;
-            --border-light: #EDEDED;
+            --body-bg: #080b12;
+            --section-alt: rgba(12, 16, 24, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+            --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+            --text-primary: #f0f0f0;
+            --text-secondary: #b0b8c8;
+            --text-muted: #7a849a;
+            --border-light: rgba(255, 255, 255, 0.06);
+            --glass-bg: rgba(10, 14, 22, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-blur: 20px;
         }
 
         * {
@@ -48,10 +51,94 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
+        }
+
+        /* ============================
+           FULL-PAGE BACKGROUND ANIMATION
+           ============================ */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-animation-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Animated light orbs travelling along paths */
+        .cpu-architecture {
+            offset-anchor: 10px 0px;
+            animation: animation-path;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.75, -0.01, 0, 0.99);
+        }
+        .cpu-line-1  { offset-path: path("M 50 80 h 320 q 20 0 20 20 v 120"); animation-duration: 5s; animation-delay: 0s; }
+        .cpu-line-2  { offset-path: path("M 750 60 h -280 q -20 0 -20 20 v 140"); animation-duration: 3s; animation-delay: 2s; }
+        .cpu-line-3  { offset-path: path("M 560 70 v 100 q 0 20 -20 20 h -60"); animation-duration: 6s; animation-delay: 1s; }
+        .cpu-line-4  { offset-path: path("M 700 350 v -100 q 0 -20 -20 -20 h -200"); animation-duration: 4s; animation-delay: 3s; }
+        .cpu-line-5  { offset-path: path("M 580 280 h 60 q 20 0 20 20 v 40 q 0 20 -20 20 h -160 q -20 0 -20 -20 v -100"); animation-duration: 5s; animation-delay: 4s; }
+        .cpu-line-6  { offset-path: path("M 420 420 v -180"); animation-duration: 7s; animation-delay: 1s; }
+        .cpu-line-7  { offset-path: path("M 340 400 v -80 q 0 -20 -20 -20 h -40 q -20 0 -20 -20 v -20 q 0 -20 20 -20 h 100"); animation-duration: 4s; animation-delay: 2s; }
+        .cpu-line-8  { offset-path: path("M 120 130 h 100 q 20 0 20 20 v 30 q 0 20 20 20 h 120"); animation-duration: 3s; animation-delay: 0.5s; }
+        .cpu-line-9  { offset-path: path("M 200 420 h 80 q 20 0 20 -20 v -80 q 0 -20 20 -20 h 60"); animation-duration: 5s; animation-delay: 3s; }
+        .cpu-line-10 { offset-path: path("M 780 200 h -120 q -20 0 -20 20 v 20"); animation-duration: 3s; animation-delay: 1.5s; }
+        .cpu-line-11 { offset-path: path("M 100 320 h 140 q 20 0 20 -20 v -40 q 0 -20 20 -20 h 100"); animation-duration: 6s; animation-delay: 4.5s; }
+        @keyframes animation-path { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
+
+        /* Integration chips */
+        .integration-chip {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+        }
+
+        /* CPU core glow */
+        @keyframes cpu-core-pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .cpu-core-glow {
+            animation: cpu-core-pulse 3s ease-in-out infinite;
+        }
+
+        /* Subtle dot grid overlay */
+        .bg-dot-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* ============================
+           GLASSMORPHIC CONTENT LAYER
+           ============================ */
+        .content-layer {
+            position: relative;
+            z-index: 2;
+        }
+
+        .glass-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
         }
 
         /* ============================
@@ -108,13 +195,8 @@
             transition: opacity 0.2s ease;
         }
 
-        .toolbar-left a:hover {
-            opacity: 0.8;
-        }
-
-        .toolbar-left svg {
-            flex-shrink: 0;
-        }
+        .toolbar-left a:hover { opacity: 0.8; }
+        .toolbar-left svg { flex-shrink: 0; }
 
         .toolbar-right {
             display: flex;
@@ -134,9 +216,7 @@
             transition: opacity 0.2s ease;
         }
 
-        .toolbar-phone:hover {
-            opacity: 0.8;
-        }
+        .toolbar-phone:hover { opacity: 0.8; }
 
         .toolbar-social {
             display: flex;
@@ -152,12 +232,10 @@
             transition: opacity 0.2s ease;
         }
 
-        .toolbar-social a:hover {
-            opacity: 0.7;
-        }
+        .toolbar-social a:hover { opacity: 0.7; }
 
         /* ============================
-           MAIN NAVIGATION (white)
+           MAIN NAVIGATION
            ============================ */
         .main-nav {
             position: fixed;
@@ -165,17 +243,19 @@
             left: 0;
             right: 0;
             z-index: 1001;
-            background: #FFFFFF;
+            background: rgba(8, 11, 18, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-            transition: box-shadow 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: background 0.3s ease;
         }
 
         .main-nav.scrolled {
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            background: rgba(8, 11, 18, 0.95);
         }
 
         .main-nav-inner {
@@ -200,12 +280,10 @@
             list-style: none;
         }
 
-        .nav-links li {
-            position: relative;
-        }
+        .nav-links li { position: relative; }
 
         .nav-links a {
-            color: #101010;
+            color: #e0e0e0;
             text-decoration: none;
             font-family: 'Poppins', sans-serif;
             font-size: 15px;
@@ -218,21 +296,10 @@
             gap: 4px;
         }
 
-        .nav-links a:hover {
-            color: #D83030;
-        }
-
-        .nav-links .dropdown-toggle {
-            cursor: pointer;
-        }
-
-        .nav-links .dropdown-toggle svg {
-            transition: transform 0.2s ease;
-        }
-
-        .nav-links li:hover .dropdown-toggle svg {
-            transform: rotate(180deg);
-        }
+        .nav-links a:hover { color: #D83030; }
+        .nav-links .dropdown-toggle { cursor: pointer; }
+        .nav-links .dropdown-toggle svg { transition: transform 0.2s ease; }
+        .nav-links li:hover .dropdown-toggle svg { transform: rotate(180deg); }
 
         .nav-dropdown {
             position: absolute;
@@ -240,10 +307,11 @@
             left: 50%;
             transform: translateX(-50%);
             margin-top: 16px;
-            background: #fff;
-            border: 1px solid var(--border-light);
+            background: rgba(12, 16, 24, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 8px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             min-width: 220px;
             padding: 8px 0;
             opacity: 0;
@@ -264,12 +332,12 @@
             font-size: 14px;
             font-weight: 500;
             text-transform: none;
-            color: var(--text-primary);
+            color: #c0c8d8;
             letter-spacing: 0;
         }
 
         .nav-dropdown a:hover {
-            background: var(--section-alt);
+            background: rgba(255,255,255,0.05);
             color: var(--brand-red);
         }
 
@@ -298,9 +366,7 @@
             padding: 4px;
         }
 
-        .nav-mobile-toggle svg {
-            display: block;
-        }
+        .nav-mobile-toggle svg { display: block; }
 
         /* ============================
            HERO
@@ -308,30 +374,21 @@
         .hero {
             padding-top: 168px;
             padding-bottom: 100px;
-            background: #fff;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle, rgba(216, 48, 48, 0.03) 1px, transparent 1px);
-            background-size: 32px 32px;
-            pointer-events: none;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            min-height: 100vh;
+            display: flex;
             align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 640px;
         }
 
         .hero-eyebrow {
             font-family: 'Poppins', sans-serif;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -340,12 +397,19 @@
         }
 
         .hero-title {
-            font-size: 52px;
-            font-weight: 700;
-            line-height: 1.12;
-            color: var(--brand-dark);
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #ffffff;
             letter-spacing: -1px;
             margin-bottom: 24px;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--brand-red), #ff6b4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
@@ -384,7 +448,7 @@
         .btn-primary:hover {
             background: var(--brand-red-hover);
             transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(216, 48, 48, 0.3);
+            box-shadow: 0 4px 20px rgba(216, 48, 48, 0.4);
         }
 
         .btn-secondary {
@@ -392,105 +456,29 @@
             align-items: center;
             gap: 8px;
             background: transparent;
-            color: var(--brand-navy);
+            color: #e0e0e0;
             padding: 14px 32px;
             border-radius: 9999px;
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
             font-weight: 600;
             text-decoration: none;
-            border: 2px solid var(--brand-navy);
+            border: 2px solid rgba(255,255,255,0.2);
             cursor: pointer;
-            transition: background 0.2s ease, color 0.2s ease;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
 
         .btn-secondary:hover {
-            background: var(--brand-navy);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.4);
             color: #fff;
-        }
-
-        /* CPU ARCHITECTURE ANIMATION */
-        .hero-animation {
-            min-height: 480px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #0a0e14 0%, #0d1520 60%, #0a0e14 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border: 1px solid rgba(255,255,255,0.06);
-            overflow: hidden;
-            padding: 24px;
-        }
-
-        .hero-animation::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 28px 28px;
-            pointer-events: none;
-        }
-
-        .cpu-animation-svg {
-            width: 100%;
-            height: auto;
-            max-width: 520px;
-            display: block;
-        }
-
-        /* Animated light orbs travelling along paths */
-        .cpu-architecture {
-            offset-anchor: 10px 0px;
-            animation: animation-path;
-            animation-iteration-count: infinite;
-            animation-timing-function: cubic-bezier(0.75, -0.01, 0, 0.99);
-        }
-        .cpu-line-1 { offset-path: path("M 10 20 h 79.5 q 5 0 5 5 v 30"); animation-duration: 5s; animation-delay: 1s; }
-        .cpu-line-2 { offset-path: path("M 180 10 h -69.7 q -5 0 -5 5 v 40"); animation-duration: 2s; animation-delay: 6s; }
-        .cpu-line-3 { offset-path: path("M 130 20 v 21.8 q 0 5 -5 5 h -25"); animation-duration: 6s; animation-delay: 4s; }
-        .cpu-line-4 { offset-path: path("M 170 80 v -21.8 q 0 -5 -5 -5 h -65"); animation-duration: 3s; animation-delay: 3s; }
-        .cpu-line-5 { offset-path: path("M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -35"); animation-duration: 4s; animation-delay: 9s; }
-        .cpu-line-6 { offset-path: path("M 94.8 95 v -46"); animation-duration: 7s; animation-delay: 3s; }
-        .cpu-line-7 { offset-path: path("M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 28"); animation-duration: 4s; animation-delay: 4s; }
-        .cpu-line-8 { offset-path: path("M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 35"); animation-duration: 3s; animation-delay: 3s; }
-        @keyframes animation-path { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
-
-        /* Integration logo chips at endpoints */
-        .integration-chip {
-            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
-        }
-        .integration-chip-bg {
-            fill: #1a1f2e;
-            stroke: rgba(255,255,255,0.12);
-            stroke-width: 0.4;
-            rx: 3;
-        }
-        .integration-label {
-            font-family: 'Poppins', sans-serif;
-            font-size: 4.2px;
-            font-weight: 600;
-            fill: rgba(255,255,255,0.85);
-            letter-spacing: 0.3px;
-        }
-
-        /* CPU core glow */
-        @keyframes cpu-core-pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
-        .cpu-core-glow {
-            animation: cpu-core-pulse 3s ease-in-out infinite;
         }
 
         /* ============================
            SOCIAL PROOF BAR
            ============================ */
         .social-proof {
-            background: var(--section-alt);
             padding: 48px 0;
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
         }
 
         .social-proof-label {
@@ -514,7 +502,8 @@
             width: 120px;
             height: 36px;
             border-radius: 4px;
-            background: rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255,255,255,0.06);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -535,7 +524,7 @@
         .section-header h2 {
             font-size: 36px;
             font-weight: 700;
-            color: var(--brand-dark);
+            color: #ffffff;
             letter-spacing: -0.5px;
             margin-bottom: 16px;
             line-height: 1.2;
@@ -550,10 +539,6 @@
         /* ============================
            INDUSTRY SERVICES GRID
            ============================ */
-        .industries {
-            background: var(--body-bg);
-        }
-
         .industry-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -561,20 +546,23 @@
         }
 
         .industry-card {
-            background: #fff;
+            background: rgba(14, 18, 28, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--card-border);
             border-radius: 8px;
             padding: 32px;
             display: flex;
             gap: 20px;
             box-shadow: var(--card-shadow);
-            transition: box-shadow 0.25s ease, transform 0.2s ease;
+            transition: box-shadow 0.25s ease, transform 0.2s ease, border-color 0.3s ease;
             scroll-margin-top: 130px;
         }
 
         .industry-card:hover {
             box-shadow: var(--card-shadow-hover);
             transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.12);
         }
 
         .industry-accent-bar {
@@ -595,9 +583,7 @@
         .accent-indigo { background: #4338CA; }
         .accent-emerald { background: #059669; }
 
-        .industry-content {
-            flex: 1;
-        }
+        .industry-content { flex: 1; }
 
         .industry-content h3 {
             font-size: 18px;
@@ -646,17 +632,11 @@
             transition: opacity 0.2s ease;
         }
 
-        .industry-link:hover {
-            opacity: 0.7;
-        }
+        .industry-link:hover { opacity: 0.7; }
 
         /* ============================
            HOW IT WORKS
            ============================ */
-        .how-it-works {
-            background: var(--section-alt);
-        }
-
         .timeline {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -671,7 +651,7 @@
             left: calc(12.5% + 24px);
             right: calc(12.5% + 24px);
             height: 2px;
-            background: var(--border-light);
+            background: rgba(255,255,255,0.06);
         }
 
         .timeline-step {
@@ -713,10 +693,6 @@
         /* ============================
            WHY ONEZIPP
            ============================ */
-        .why-section {
-            background: var(--body-bg);
-        }
-
         .value-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -724,7 +700,9 @@
         }
 
         .value-card {
-            background: #fff;
+            background: rgba(14, 18, 28, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--card-border);
             border-top: 3px solid var(--brand-red);
             border-radius: 8px;
@@ -749,17 +727,14 @@
            CONTACT / CTA
            ============================ */
         .cta-section {
-            background: var(--brand-navy);
-            color: #fff;
+            background: rgba(3, 46, 66, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
 
-        .cta-section .section-header h2 {
-            color: #fff;
-        }
-
-        .cta-section .section-header p {
-            color: rgba(255, 255, 255, 0.6);
-        }
+        .cta-section .section-header h2 { color: #fff; }
+        .cta-section .section-header p { color: rgba(255, 255, 255, 0.6); }
 
         .contact-form {
             max-width: 640px;
@@ -773,14 +748,8 @@
             margin-bottom: 16px;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full-width { grid-column: 1 / -1; }
 
         .form-group label {
             font-family: 'Poppins', sans-serif;
@@ -805,15 +774,11 @@
         }
 
         .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.3);
-        }
+        .form-group textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
 
         .form-group input:focus,
         .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--brand-red);
-        }
+        .form-group textarea:focus { border-color: var(--brand-red); }
 
         .form-group select {
             appearance: none;
@@ -823,20 +788,10 @@
             padding-right: 36px;
         }
 
-        .form-group select option {
-            background: var(--brand-navy);
-            color: #fff;
-        }
+        .form-group select option { background: var(--brand-navy); color: #fff; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-actions {
-            margin-top: 24px;
-            text-align: center;
-        }
+        .form-actions { margin-top: 24px; text-align: center; }
 
         .btn-cta-submit {
             display: inline-flex;
@@ -869,20 +824,16 @@
             color: rgba(255, 255, 255, 0.4);
         }
 
-        .form-alt a {
-            color: var(--brand-red);
-            text-decoration: none;
-        }
-
-        .form-alt a:hover {
-            text-decoration: underline;
-        }
+        .form-alt a { color: var(--brand-red); text-decoration: none; }
+        .form-alt a:hover { text-decoration: underline; }
 
         /* ============================
            FOOTER
            ============================ */
         .footer {
-            background: #021824;
+            background: rgba(2, 24, 36, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             padding: 32px 0;
         }
@@ -899,11 +850,7 @@
             gap: 16px;
         }
 
-        .footer-logo img {
-            height: 22px;
-            width: auto;
-            display: block;
-        }
+        .footer-logo img { height: 22px; width: auto; display: block; }
 
         .footer-copy {
             font-size: 13px;
@@ -925,9 +872,7 @@
             transition: color 0.2s ease;
         }
 
-        .footer-links a:hover {
-            color: #fff;
-        }
+        .footer-links a:hover { color: #fff; }
 
         .footer-email a {
             font-size: 13px;
@@ -936,9 +881,7 @@
             transition: color 0.2s ease;
         }
 
-        .footer-email a:hover {
-            color: var(--brand-red);
-        }
+        .footer-email a:hover { color: var(--brand-red); }
 
         /* ============================
            SCROLL ANIMATIONS
@@ -958,26 +901,16 @@
            RESPONSIVE: TABLET
            ============================ */
         @media (max-width: 768px) {
-            .top-toolbar {
-                height: 32px;
-            }
-
-            .toolbar-right {
-                display: none;
-            }
+            .top-toolbar { height: 32px; }
+            .toolbar-right { display: none; }
 
             .main-nav {
                 top: 32px;
                 height: 60px;
             }
 
-            .nav-links {
-                display: none;
-            }
-
-            .nav-mobile-toggle {
-                display: block;
-            }
+            .nav-links { display: none; }
+            .nav-mobile-toggle { display: block; }
 
             .nav-links.open {
                 display: flex;
@@ -986,11 +919,11 @@
                 top: 60px;
                 left: 0;
                 right: 0;
-                background: #fff;
+                background: rgba(8, 11, 18, 0.95);
+                backdrop-filter: blur(16px);
                 padding: 24px;
                 gap: 16px;
                 border-bottom: 1px solid var(--border-light);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             }
 
             .nav-links.open .nav-dropdown {
@@ -1009,26 +942,9 @@
                 padding-bottom: 64px;
             }
 
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
+            .hero-title { font-size: 36px; }
 
-            .hero-title {
-                font-size: 36px;
-            }
-
-            .hero-animation {
-                min-height: 280px;
-                padding: 16px;
-            }
-            .cpu-animation-svg {
-                max-width: 360px;
-            }
-
-            .industry-grid {
-                grid-template-columns: 1fr;
-            }
+            .industry-grid { grid-template-columns: 1fr; }
 
             .timeline {
                 grid-template-columns: 1fr;
@@ -1056,13 +972,8 @@
                 top: 0;
             }
 
-            .value-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
+            .value-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
 
             .footer-inner {
                 flex-direction: column;
@@ -1075,30 +986,17 @@
                 gap: 8px;
             }
 
-            .section-header h2 {
-                font-size: 28px;
-            }
-
-            .section-padding {
-                padding: 72px 0;
-            }
-
-            .logos-row {
-                gap: 24px;
-            }
+            .section-header h2 { font-size: 28px; }
+            .section-padding { padding: 72px 0; }
+            .logos-row { gap: 24px; }
         }
 
         /* ============================
            RESPONSIVE: MOBILE
            ============================ */
         @media (max-width: 480px) {
-            .hero-title {
-                font-size: 30px;
-            }
-
-            .hero-subtitle {
-                font-size: 15px;
-            }
+            .hero-title { font-size: 30px; }
+            .hero-subtitle { font-size: 15px; }
 
             .hero-buttons {
                 flex-direction: column;
@@ -1111,37 +1009,274 @@
                 text-align: center;
             }
 
-            .hero-animation {
-                min-height: 220px;
-                padding: 12px;
-            }
-            .cpu-animation-svg {
-                max-width: 300px;
-            }
-
-            .industry-card {
-                padding: 24px;
-            }
-
-            .section-header h2 {
-                font-size: 24px;
-            }
-
-            .section-padding {
-                padding: 56px 0;
-            }
-
-            .container {
-                padding: 0 16px;
-            }
-
-            .value-card {
-                padding: 28px 24px;
-            }
+            .industry-card { padding: 24px; }
+            .section-header h2 { font-size: 24px; }
+            .section-padding { padding: 56px 0; }
+            .container { padding: 0 16px; }
+            .value-card { padding: 28px 24px; }
         }
     </style>
 </head>
 <body>
+
+<!-- ============================
+     FULL-PAGE BACKGROUND ANIMATION
+     ============================ -->
+<div class="bg-animation" aria-hidden="true">
+    <svg class="bg-animation-svg" viewBox="0 0 850 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- ── PATH LINES (circuit traces) ── -->
+        <g stroke="rgba(255,255,255,0.09)" fill="none" stroke-width="1">
+            <!-- 1 Gmail → centre (top-left) -->
+            <path d="M 50 80 h 320 q 20 0 20 20 v 120">
+                <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.25,0.1,0.5,1" keyTimes="0;1"/>
+            </path>
+            <!-- 2 Slack → centre (top-right) -->
+            <path d="M 750 60 h -280 q -20 0 -20 20 v 140"/>
+            <!-- 3 Notion → centre (top-centre-right) -->
+            <path d="M 560 70 v 100 q 0 20 -20 20 h -60"/>
+            <!-- 4 HubSpot → centre (right side) -->
+            <path d="M 700 350 v -100 q 0 -20 -20 -20 h -200"/>
+            <!-- 5 Airtable → centre (bottom-right loop) -->
+            <path d="M 580 280 h 60 q 20 0 20 20 v 40 q 0 20 -20 20 h -160 q -20 0 -20 -20 v -100"/>
+            <!-- 6 Sheets → centre (bottom-centre) -->
+            <path d="M 420 420 v -180"/>
+            <!-- 7 Zapier → centre (bottom-left) -->
+            <path d="M 340 400 v -80 q 0 -20 -20 -20 h -40 q -20 0 -20 -20 v -20 q 0 -20 20 -20 h 100"/>
+            <!-- 8 OpenAI → centre (left side) -->
+            <path d="M 120 130 h 100 q 20 0 20 20 v 30 q 0 20 20 20 h 120"/>
+            <!-- 9 Webhook → centre (bottom-left new) -->
+            <path d="M 200 420 h 80 q 20 0 20 -20 v -80 q 0 -20 20 -20 h 60"/>
+            <!-- 10 Make → centre (far right) -->
+            <path d="M 780 200 h -120 q -20 0 -20 20 v 20"/>
+            <!-- 11 n8n → centre (left middle) -->
+            <path d="M 100 320 h 140 q 20 0 20 -20 v -40 q 0 -20 20 -20 h 100"/>
+        </g>
+
+        <!-- ── LIGHT ORBS TRAVELLING ALONG PATHS ── -->
+        <!-- 1 Blue – Gmail -->
+        <g mask="url(#bg-mask-1)"><circle class="cpu-architecture cpu-line-1" cx="0" cy="0" r="20" fill="url(#bg-blue-grad)"/></g>
+        <!-- 2 Yellow – Slack -->
+        <g mask="url(#bg-mask-2)"><circle class="cpu-architecture cpu-line-2" cx="0" cy="0" r="20" fill="url(#bg-yellow-grad)"/></g>
+        <!-- 3 Pinkish – Notion -->
+        <g mask="url(#bg-mask-3)"><circle class="cpu-architecture cpu-line-3" cx="0" cy="0" r="20" fill="url(#bg-pinkish-grad)"/></g>
+        <!-- 4 White – HubSpot -->
+        <g mask="url(#bg-mask-4)"><circle class="cpu-architecture cpu-line-4" cx="0" cy="0" r="20" fill="url(#bg-white-grad)"/></g>
+        <!-- 5 Green – Airtable -->
+        <g mask="url(#bg-mask-5)"><circle class="cpu-architecture cpu-line-5" cx="0" cy="0" r="20" fill="url(#bg-green-grad)"/></g>
+        <!-- 6 Orange – Google Sheets -->
+        <g mask="url(#bg-mask-6)"><circle class="cpu-architecture cpu-line-6" cx="0" cy="0" r="20" fill="url(#bg-orange-grad)"/></g>
+        <!-- 7 Cyan – Zapier -->
+        <g mask="url(#bg-mask-7)"><circle class="cpu-architecture cpu-line-7" cx="0" cy="0" r="20" fill="url(#bg-cyan-grad)"/></g>
+        <!-- 8 Rose – OpenAI -->
+        <g mask="url(#bg-mask-8)"><circle class="cpu-architecture cpu-line-8" cx="0" cy="0" r="20" fill="url(#bg-rose-grad)"/></g>
+        <!-- 9 Purple – Webhook -->
+        <g mask="url(#bg-mask-9)"><circle class="cpu-architecture cpu-line-9" cx="0" cy="0" r="20" fill="url(#bg-purple-grad)"/></g>
+        <!-- 10 Magenta – Make -->
+        <g mask="url(#bg-mask-10)"><circle class="cpu-architecture cpu-line-10" cx="0" cy="0" r="20" fill="url(#bg-magenta-grad)"/></g>
+        <!-- 11 Red – n8n -->
+        <g mask="url(#bg-mask-11)"><circle class="cpu-architecture cpu-line-11" cx="0" cy="0" r="20" fill="url(#bg-n8n-grad)"/></g>
+
+        <!-- ── INTEGRATION CHIPS AT ENDPOINTS ── -->
+
+        <!-- 1: Gmail (50,80) -->
+        <g class="integration-chip" transform="translate(14,68)">
+            <rect x="0" y="0" width="60" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <path d="M10 10 l8 5 8-5" fill="none" stroke="#EA4335" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="8" y="9" width="16" height="11" rx="2" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+            <text x="31" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">Gmail</text>
+        </g>
+
+        <!-- 2: Slack (750,60) -->
+        <g class="integration-chip" transform="translate(718,48)">
+            <rect x="0" y="0" width="58" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <circle cx="14" cy="14" r="5" fill="#E01E5A" opacity="0.9"/>
+            <circle cx="14" cy="14" r="2.2" fill="rgba(20,26,40,0.85)"/>
+            <text x="24" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">Slack</text>
+        </g>
+
+        <!-- 3: Notion (560,70) -->
+        <g class="integration-chip" transform="translate(530,54)">
+            <rect x="0" y="0" width="64" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <rect x="8" y="6" width="12" height="16" rx="2" fill="white" opacity="0.85"/>
+            <line x1="10" y1="10" x2="18" y2="10" stroke="rgba(20,26,40,0.85)" stroke-width="1.2"/>
+            <line x1="10" y1="13" x2="18" y2="13" stroke="rgba(20,26,40,0.85)" stroke-width="1.2"/>
+            <line x1="10" y1="16" x2="16" y2="16" stroke="rgba(20,26,40,0.85)" stroke-width="1.2"/>
+            <text x="25" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">Notion</text>
+        </g>
+
+        <!-- 4: HubSpot (700,350) -->
+        <g class="integration-chip" transform="translate(660,340)">
+            <rect x="0" y="0" width="72" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <circle cx="14" cy="14" r="6" fill="#FF7A59" opacity="0.9"/>
+            <circle cx="14" cy="14" r="2.5" fill="rgba(20,26,40,0.85)"/>
+            <text x="25" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">HubSpot</text>
+        </g>
+
+        <!-- 5: Airtable (580,280) -->
+        <g class="integration-chip" transform="translate(550,268)">
+            <rect x="0" y="0" width="64" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <rect x="7" y="7" width="14" height="7" rx="1" fill="#FCB400" opacity="0.9"/>
+            <rect x="7" y="15" width="14" height="6" rx="1" fill="#18BFFF" opacity="0.9"/>
+            <text x="26" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">Airtable</text>
+        </g>
+
+        <!-- 6: Sheets (420,420) -->
+        <g class="integration-chip" transform="translate(390,420)">
+            <rect x="0" y="0" width="64" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <rect x="7" y="5" width="14" height="18" rx="2" fill="#34A853" opacity="0.9"/>
+            <line x1="9" y1="10" x2="19" y2="10" stroke="white" stroke-width="1"/>
+            <line x1="9" y1="14" x2="19" y2="14" stroke="white" stroke-width="1"/>
+            <line x1="9" y1="18" x2="17" y2="18" stroke="white" stroke-width="1"/>
+            <text x="26" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">Sheets</text>
+        </g>
+
+        <!-- 7: Zapier (340,400) -->
+        <g class="integration-chip" transform="translate(304,392)">
+            <rect x="0" y="0" width="62" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <text x="7" y="20" font-family="Poppins,sans-serif" font-size="15" font-weight="700" fill="#FF4A00" opacity="0.9">Z</text>
+            <text x="24" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">Zapier</text>
+        </g>
+
+        <!-- 8: OpenAI (120,130) -->
+        <g class="integration-chip" transform="translate(76,118)">
+            <rect x="0" y="0" width="68" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <circle cx="14" cy="14" r="6" fill="none" stroke="#10a37f" stroke-width="1.8"/>
+            <circle cx="14" cy="14" r="2.5" fill="#10a37f" opacity="0.8"/>
+            <text x="25" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">OpenAI</text>
+        </g>
+
+        <!-- 9: Webhook (200,420) -->
+        <g class="integration-chip" transform="translate(155,412)">
+            <rect x="0" y="0" width="78" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <!-- Webhook hook icon -->
+            <path d="M10 10 q0 6 5 6 q5 0 5-6" fill="none" stroke="#9333EA" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="15" cy="9" r="2" fill="#9333EA" opacity="0.9"/>
+            <text x="27" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">Webhook</text>
+        </g>
+
+        <!-- 10: Make (780,200) -->
+        <g class="integration-chip" transform="translate(746,188)">
+            <rect x="0" y="0" width="60" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <!-- Make.com circle logo -->
+            <circle cx="14" cy="14" r="6" fill="#6D00CC" opacity="0.9"/>
+            <circle cx="14" cy="14" r="3" fill="rgba(20,26,40,0.85)"/>
+            <circle cx="14" cy="14" r="1.2" fill="#6D00CC"/>
+            <text x="25" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">Make</text>
+        </g>
+
+        <!-- 11: n8n (100,320) -->
+        <g class="integration-chip" transform="translate(62,308)">
+            <rect x="0" y="0" width="56" height="28" rx="6" fill="rgba(20,26,40,0.85)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <!-- n8n logo: orange-red node dots connected -->
+            <circle cx="10" cy="14" r="3" fill="#EA4B35" opacity="0.9"/>
+            <circle cx="20" cy="14" r="2" fill="#EA4B35" opacity="0.7"/>
+            <line x1="13" y1="14" x2="18" y2="14" stroke="#EA4B35" stroke-width="1" opacity="0.6"/>
+            <text x="26" y="19" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)">n8n</text>
+        </g>
+
+        <!-- ── ONEZIPP CPU CORE (centre hub) ── -->
+        <g>
+            <!-- Outer glow ring -->
+            <rect x="365" y="190" width="120" height="80" rx="10" fill="none" stroke="rgba(216,48,48,0.2)" stroke-width="1.5" class="cpu-core-glow"/>
+
+            <!-- Main CPU box -->
+            <rect x="370" y="195" width="110" height="70" rx="8" fill="rgba(10,14,22,0.92)" filter="url(#bg-cpu-shadow)"/>
+            <rect x="370" y="195" width="110" height="70" rx="8" fill="url(#bg-cpu-inner-grad)" opacity="0.4"/>
+
+            <!-- Connection pin nubs -->
+            <g fill="url(#bg-pin-gradient)">
+                <rect x="395" y="186" width="8" height="12" rx="2"/>
+                <rect x="420" y="186" width="8" height="12" rx="2"/>
+                <rect x="445" y="186" width="8" height="12" rx="2"/>
+                <rect x="395" y="262" width="8" height="12" rx="2"/>
+                <rect x="420" y="262" width="8" height="12" rx="2"/>
+                <rect x="445" y="262" width="8" height="12" rx="2"/>
+                <rect x="360" y="215" width="12" height="8" rx="2"/>
+                <rect x="360" y="237" width="12" height="8" rx="2"/>
+                <rect x="478" y="215" width="12" height="8" rx="2"/>
+                <rect x="478" y="237" width="12" height="8" rx="2"/>
+            </g>
+
+            <!-- Brand text: Onezipp -->
+            <text x="425" y="226" text-anchor="middle" font-family="Poppins,sans-serif" font-size="18" font-weight="800" fill="url(#bg-onezipp-gradient)" letter-spacing="0.5">Onezipp</text>
+
+            <!-- Tagline -->
+            <text x="425" y="245" text-anchor="middle" font-family="Poppins,sans-serif" font-size="7" font-weight="500" fill="rgba(255,255,255,0.45)" letter-spacing="1.5">AUTOMATE EVERYTHING</text>
+
+            <!-- Subtle inner border -->
+            <rect x="370" y="195" width="110" height="70" rx="8" fill="none" stroke="rgba(216,48,48,0.15)" stroke-width="0.8"/>
+        </g>
+
+        <!-- ── DEFS: MASKS, GRADIENTS, FILTERS ── -->
+        <defs>
+            <!-- Masks for orbs -->
+            <mask id="bg-mask-1"><path d="M 50 80 h 320 q 20 0 20 20 v 120" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-2"><path d="M 750 60 h -280 q -20 0 -20 20 v 140" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-3"><path d="M 560 70 v 100 q 0 20 -20 20 h -60" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-4"><path d="M 700 350 v -100 q 0 -20 -20 -20 h -200" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-5"><path d="M 580 280 h 60 q 20 0 20 20 v 40 q 0 20 -20 20 h -160 q -20 0 -20 -20 v -100" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-6"><path d="M 420 420 v -180" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-7"><path d="M 340 400 v -80 q 0 -20 -20 -20 h -40 q -20 0 -20 -20 v -20 q 0 -20 20 -20 h 100" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-8"><path d="M 120 130 h 100 q 20 0 20 20 v 30 q 0 20 20 20 h 120" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-9"><path d="M 200 420 h 80 q 20 0 20 -20 v -80 q 0 -20 20 -20 h 60" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-10"><path d="M 780 200 h -120 q -20 0 -20 20 v 20" stroke-width="2" stroke="white" fill="none"/></mask>
+            <mask id="bg-mask-11"><path d="M 100 320 h 140 q 20 0 20 -20 v -40 q 0 -20 20 -20 h 100" stroke-width="2" stroke="white" fill="none"/></mask>
+
+            <!-- Light orb radial gradients -->
+            <radialGradient id="bg-blue-grad"    fx="1"><stop offset="0%" stop-color="#00E8ED"/><stop offset="50%" stop-color="#0088FF"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-yellow-grad"  fx="1"><stop offset="0%" stop-color="#FFD800"/><stop offset="50%" stop-color="#FFD800"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-pinkish-grad" fx="1"><stop offset="0%" stop-color="#830CD1"/><stop offset="50%" stop-color="#FF008B"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-white-grad"   fx="1"><stop offset="0%" stop-color="white"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-green-grad"   fx="1"><stop offset="0%" stop-color="#22c55e"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-orange-grad"  fx="1"><stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-cyan-grad"    fx="1"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-rose-grad"    fx="1"><stop offset="0%" stop-color="#f43f5e"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-purple-grad"  fx="1"><stop offset="0%" stop-color="#9333EA"/><stop offset="50%" stop-color="#7C3AED"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-magenta-grad" fx="1"><stop offset="0%" stop-color="#6D00CC"/><stop offset="50%" stop-color="#A855F7"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg-n8n-grad"     fx="1"><stop offset="0%" stop-color="#EA4B35"/><stop offset="50%" stop-color="#FF6B4A"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+
+            <!-- Onezipp brand gradient for core text -->
+            <linearGradient id="bg-onezipp-gradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#D83030">
+                    <animate attributeName="offset" values="-1;0;0" dur="4s" repeatCount="indefinite"/>
+                </stop>
+                <stop offset="50%" stop-color="#ffffff">
+                    <animate attributeName="offset" values="0;0.5;1" dur="4s" repeatCount="indefinite"/>
+                </stop>
+                <stop offset="100%" stop-color="#D83030">
+                    <animate attributeName="offset" values="1;1;2" dur="4s" repeatCount="indefinite"/>
+                </stop>
+            </linearGradient>
+
+            <!-- CPU inner gradient -->
+            <linearGradient id="bg-cpu-inner-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#D83030" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="#032E42" stop-opacity="0.12"/>
+            </linearGradient>
+
+            <!-- Pin gradient -->
+            <linearGradient id="bg-pin-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#4F4F4F"/>
+                <stop offset="60%" stop-color="#1a1e28"/>
+            </linearGradient>
+
+            <!-- CPU shadow -->
+            <filter id="bg-cpu-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#D83030" flood-opacity="0.12"/>
+                <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="black" flood-opacity="0.4"/>
+            </filter>
+        </defs>
+    </svg>
+</div>
+
+<!-- Subtle dot grid overlay -->
+<div class="bg-dot-grid" aria-hidden="true"></div>
+
+<!-- ============================
+     CONTENT LAYER (above animation)
+     ============================ -->
+<div class="content-layer">
 
 <!-- ============================
      TOP TOOLBAR (thin navy bar)
@@ -1167,12 +1302,12 @@
 </div>
 
 <!-- ============================
-     MAIN NAVIGATION (white bar)
+     MAIN NAVIGATION
      ============================ -->
 <nav class="main-nav" id="main-nav">
     <div class="main-nav-inner">
         <a href="#" class="nav-logo">
-            <img src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="oneZipp" />
+            <img src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="Onezipp" />
         </a>
         <ul class="nav-links" id="nav-links">
             <li><a href="#">HOME</a></li>
@@ -1197,7 +1332,7 @@
             <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
         </ul>
         <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#101010" stroke-width="2" stroke-linecap="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round">
                 <line x1="3" y1="6" x2="21" y2="6"/>
                 <line x1="3" y1="12" x2="21" y2="12"/>
                 <line x1="3" y1="18" x2="21" y2="18"/>
@@ -1211,262 +1346,13 @@
      ============================ -->
 <section class="hero">
     <div class="container">
-        <div class="hero-grid">
-            <div class="hero-text">
-                <p class="hero-eyebrow">Scaling Simplicity. Automating Intelligence.</p>
-                <h1 class="hero-title">Workflow automation,<br>engineered for your<br>industry</h1>
-                <p class="hero-subtitle">We design and build custom automation systems for HR, Tech, Finance, Legal, Healthcare and more. Data-driven. No lock-in. Live in 2 weeks.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">Book a Discovery Call</a>
-                    <a href="#services" class="btn-secondary">See Our Services</a>
-                </div>
-            </div>
-            <div>
-                <div class="hero-animation" id="hero-animation">
-                <!-- ================================================
-                     CPU ARCHITECTURE ANIMATION
-                     Centre = n8n + Claude Code
-                     Lines  = 8 integration tools flowing inward
-                     ================================================ -->
-                <svg class="cpu-animation-svg" viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
-
-                    <!-- ── PATH LINES ── -->
-                    <g stroke="rgba(255,255,255,0.18)" fill="none" stroke-width="0.35"
-                       stroke-dasharray="100 100" pathLength="100"
-                       markerStart="url(#cpu-circle-marker)">
-                        <!-- 1 Gmail / top-left -->
-                        <path stroke-dasharray="100 100" pathLength="100" d="M 10 20 h 79.5 q 5 0 5 5 v 30">
-                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25,0.1,0.5,1" keyTimes="0;1"/>
-                        </path>
-                        <!-- 2 Slack / top-right -->
-                        <path stroke-dasharray="100 100" pathLength="100" d="M 180 10 h -69.7 q -5 0 -5 5 v 40">
-                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25,0.1,0.5,1" keyTimes="0;1"/>
-                        </path>
-                        <!-- 3 Notion / top-centre-right -->
-                        <path d="M 130 20 v 21.8 q 0 5 -5 5 h -10"/>
-                        <!-- 4 HubSpot / right -->
-                        <path d="M 170 80 v -21.8 q 0 -5 -5 -5 h -50"/>
-                        <!-- 5 Airtable / bottom-right loop -->
-                        <path stroke-dasharray="100 100" pathLength="100" d="M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -20">
-                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25,0.1,0.5,1" keyTimes="0;1"/>
-                        </path>
-                        <!-- 6 Google Sheets / bottom-centre -->
-                        <path d="M 94.8 95 v -36"/>
-                        <!-- 7 Zapier / bottom-left -->
-                        <path d="M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 14"/>
-                        <!-- 8 OpenAI / left -->
-                        <path d="M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 20"/>
-                    </g>
-
-                    <!-- ── LIGHT ORBS TRAVELLING ALONG PATHS ── -->
-                    <!-- 1 Blue – Gmail -->
-                    <g mask="url(#cpu-mask-1)">
-                        <circle class="cpu-architecture cpu-line-1" cx="0" cy="0" r="8" fill="url(#cpu-blue-grad)"/>
-                    </g>
-                    <!-- 2 Yellow – Slack -->
-                    <g mask="url(#cpu-mask-2)">
-                        <circle class="cpu-architecture cpu-line-2" cx="0" cy="0" r="8" fill="url(#cpu-yellow-grad)"/>
-                    </g>
-                    <!-- 3 Pinkish – Notion -->
-                    <g mask="url(#cpu-mask-3)">
-                        <circle class="cpu-architecture cpu-line-3" cx="0" cy="0" r="8" fill="url(#cpu-pinkish-grad)"/>
-                    </g>
-                    <!-- 4 White – HubSpot -->
-                    <g mask="url(#cpu-mask-4)">
-                        <circle class="cpu-architecture cpu-line-4" cx="0" cy="0" r="8" fill="url(#cpu-white-grad)"/>
-                    </g>
-                    <!-- 5 Green – Airtable -->
-                    <g mask="url(#cpu-mask-5)">
-                        <circle class="cpu-architecture cpu-line-5" cx="0" cy="0" r="8" fill="url(#cpu-green-grad)"/>
-                    </g>
-                    <!-- 6 Orange – Google Sheets -->
-                    <g mask="url(#cpu-mask-6)">
-                        <circle class="cpu-architecture cpu-line-6" cx="0" cy="0" r="8" fill="url(#cpu-orange-grad)"/>
-                    </g>
-                    <!-- 7 Cyan – Zapier -->
-                    <g mask="url(#cpu-mask-7)">
-                        <circle class="cpu-architecture cpu-line-7" cx="0" cy="0" r="8" fill="url(#cpu-cyan-grad)"/>
-                    </g>
-                    <!-- 8 Rose – OpenAI -->
-                    <g mask="url(#cpu-mask-8)">
-                        <circle class="cpu-architecture cpu-line-8" cx="0" cy="0" r="8" fill="url(#cpu-rose-grad)"/>
-                    </g>
-
-                    <!-- ── INTEGRATION CHIPS AT ENDPOINTS ── -->
-
-                    <!-- 1: Gmail  (10,20) top-left -->
-                    <g class="integration-chip" transform="translate(1,14)">
-                        <rect x="0" y="0" width="18" height="10" rx="2.5" fill="#1e2433" stroke="rgba(255,255,255,0.15)" stroke-width="0.4"/>
-                        <!-- Gmail M icon -->
-                        <path d="M3 3.5 h12 q1 0 1 1 v5 q0 1-1 1 H3 q-1 0-1-1 v-5 q0-1 1-1z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.4"/>
-                        <path d="M2 4.2 l7 4 7-4" fill="none" stroke="#EA4335" stroke-width="0.7"/>
-                        <text x="5" y="8.8" font-family="Poppins,sans-serif" font-size="3.4" font-weight="600" fill="rgba(255,255,255,0.8)">Gmail</text>
-                    </g>
-
-                    <!-- 2: Slack  (180,10) top-right -->
-                    <g class="integration-chip" transform="translate(167,4)">
-                        <rect x="0" y="0" width="20" height="10" rx="2.5" fill="#1e2433" stroke="rgba(255,255,255,0.15)" stroke-width="0.4"/>
-                        <!-- Slack hash icon approximation -->
-                        <circle cx="3.8" cy="5" r="1.5" fill="#E01E5A" opacity="0.9"/>
-                        <circle cx="3.8" cy="5" r="0.7" fill="#1e2433"/>
-                        <text x="7" y="6.8" font-family="Poppins,sans-serif" font-size="3.4" font-weight="600" fill="rgba(255,255,255,0.8)">Slack</text>
-                    </g>
-
-                    <!-- 3: Notion  (130,20) -->
-                    <g class="integration-chip" transform="translate(121,14)">
-                        <rect x="0" y="0" width="20" height="10" rx="2.5" fill="#1e2433" stroke="rgba(255,255,255,0.15)" stroke-width="0.4"/>
-                        <rect x="2.5" y="2" width="6" height="7" rx="1" fill="white" opacity="0.9"/>
-                        <line x1="3.5" y1="4" x2="7.5" y2="4" stroke="#1e2433" stroke-width="0.6"/>
-                        <line x1="3.5" y1="5.5" x2="7.5" y2="5.5" stroke="#1e2433" stroke-width="0.6"/>
-                        <line x1="3.5" y1="7" x2="6.5" y2="7" stroke="#1e2433" stroke-width="0.6"/>
-                        <text x="10" y="6.8" font-family="Poppins,sans-serif" font-size="3.4" font-weight="600" fill="rgba(255,255,255,0.8)">Notion</text>
-                    </g>
-
-                    <!-- 4: HubSpot  (170,80) -->
-                    <g class="integration-chip" transform="translate(158,75)">
-                        <rect x="0" y="0" width="24" height="10" rx="2.5" fill="#1e2433" stroke="rgba(255,255,255,0.15)" stroke-width="0.4"/>
-                        <circle cx="4" cy="5" r="2.2" fill="#FF7A59" opacity="0.9"/>
-                        <circle cx="4" cy="5" r="1" fill="#1e2433"/>
-                        <text x="8" y="6.8" font-family="Poppins,sans-serif" font-size="3.4" font-weight="600" fill="rgba(255,255,255,0.8)">HubSpot</text>
-                    </g>
-
-                    <!-- 5: Airtable  (135,65) start -->
-                    <g class="integration-chip" transform="translate(126,59)">
-                        <rect x="0" y="0" width="22" height="10" rx="2.5" fill="#1e2433" stroke="rgba(255,255,255,0.15)" stroke-width="0.4"/>
-                        <rect x="2" y="3" width="5" height="3" rx="0.5" fill="#FCB400" opacity="0.9"/>
-                        <rect x="2" y="6.5" width="5" height="2" rx="0.5" fill="#18BFFF" opacity="0.9"/>
-                        <text x="9" y="6.8" font-family="Poppins,sans-serif" font-size="3.4" font-weight="600" fill="rgba(255,255,255,0.8)">Airtable</text>
-                    </g>
-
-                    <!-- 6: Sheets  (94.8,95) bottom -->
-                    <g class="integration-chip" transform="translate(83,98)">
-                        <rect x="0" y="0" width="24" height="10" rx="2.5" fill="#1e2433" stroke="rgba(255,255,255,0.15)" stroke-width="0.4"/>
-                        <rect x="2" y="1.5" width="6" height="7.5" rx="1" fill="#34A853" opacity="0.9"/>
-                        <line x1="3" y1="4" x2="7" y2="4" stroke="white" stroke-width="0.5"/>
-                        <line x1="3" y1="5.5" x2="7" y2="5.5" stroke="white" stroke-width="0.5"/>
-                        <line x1="3" y1="7" x2="6" y2="7" stroke="white" stroke-width="0.5"/>
-                        <text x="10" y="6.8" font-family="Poppins,sans-serif" font-size="3.4" font-weight="600" fill="rgba(255,255,255,0.8)">Sheets</text>
-                    </g>
-
-                    <!-- 7: Zapier  (88,88) bottom-left -->
-                    <g class="integration-chip" transform="translate(78,84)">
-                        <rect x="0" y="0" width="20" height="10" rx="2.5" fill="#1e2433" stroke="rgba(255,255,255,0.15)" stroke-width="0.4"/>
-                        <text x="2.2" y="7" font-family="Poppins,sans-serif" font-size="5.5" font-weight="700" fill="#FF4A00" opacity="0.9">Z</text>
-                        <text x="8" y="6.8" font-family="Poppins,sans-serif" font-size="3.4" font-weight="600" fill="rgba(255,255,255,0.8)">Zapier</text>
-                    </g>
-
-                    <!-- 8: OpenAI  (30,30) left -->
-                    <g class="integration-chip" transform="translate(18,24)">
-                        <rect x="0" y="0" width="22" height="10" rx="2.5" fill="#1e2433" stroke="rgba(255,255,255,0.15)" stroke-width="0.4"/>
-                        <!-- OpenAI swirl approximation -->
-                        <circle cx="4" cy="5" r="2.5" fill="none" stroke="#10a37f" stroke-width="0.8"/>
-                        <circle cx="4" cy="5" r="1" fill="#10a37f" opacity="0.8"/>
-                        <text x="8" y="6.8" font-family="Poppins,sans-serif" font-size="3.4" font-weight="600" fill="rgba(255,255,255,0.8)">OpenAI</text>
-                    </g>
-
-                    <!-- ── CPU CORE BOX ── -->
-                    <g>
-                        <!-- CPU connection pin nubs -->
-                        <g fill="url(#cpu-connection-gradient)">
-                            <rect x="93"   y="37"    width="2.5" height="5"   rx="0.7"/>
-                            <rect x="104"  y="37"    width="2.5" height="5"   rx="0.7"/>
-                            <rect x="116.3" y="44"   width="2.5" height="5"   rx="0.7" transform="rotate(90 116.25 45.5)"/>
-                            <rect x="122.8" y="44"   width="2.5" height="5"   rx="0.7" transform="rotate(90 116.25 45.5)"/>
-                            <rect x="104"  y="16"    width="2.5" height="5"   rx="0.7" transform="rotate(180 105.25 39.5)"/>
-                            <rect x="114.5" y="16"   width="2.5" height="5"   rx="0.7" transform="rotate(180 105.25 39.5)"/>
-                            <rect x="80"   y="-13.6" width="2.5" height="5"   rx="0.7" transform="rotate(270 115.25 19.5)"/>
-                            <rect x="87"   y="-13.6" width="2.5" height="5"   rx="0.7" transform="rotate(270 115.25 19.5)"/>
-                        </g>
-
-                        <!-- Outer glow ring -->
-                        <rect x="82" y="37" width="36" height="26" rx="3" fill="none" stroke="rgba(216,48,48,0.25)" stroke-width="0.6" class="cpu-core-glow"/>
-
-                        <!-- CPU main rectangle -->
-                        <rect x="84" y="39" width="32" height="22" rx="2.5" fill="#0f1319" filter="url(#cpu-light-shadow)"/>
-                        <!-- Inner subtle gradient overlay -->
-                        <rect x="84" y="39" width="32" height="22" rx="2.5" fill="url(#cpu-inner-grad)" opacity="0.5"/>
-
-                        <!-- TOP HALF: n8n logo area -->
-                        <rect x="84" y="39" width="32" height="10" rx="2.5" fill="#1a0a2e"/>
-                        <!-- n8n wordmark in orange-red brand color -->
-                        <text x="87.5" y="47" font-family="Poppins,sans-serif" font-size="5.8" font-weight="700" fill="#EA4B35" letter-spacing="0.3">n8n</text>
-                        <!-- n8n node-dot accent -->
-                        <circle cx="108" cy="44" r="1.2" fill="#EA4B35" opacity="0.9"/>
-                        <circle cx="111.5" cy="44" r="0.8" fill="#EA4B35" opacity="0.6"/>
-
-                        <!-- Divider line -->
-                        <line x1="85" y1="49.5" x2="115" y2="49.5" stroke="rgba(255,255,255,0.08)" stroke-width="0.4"/>
-
-                        <!-- BOTTOM HALF: Claude Code -->
-                        <rect x="84" y="49.5" width="32" height="11.5" rx="0" fill="#0d1a2a"/>
-                        <rect x="84" y="58" width="32" height="3" rx="0 0 2.5 2.5" fill="#0d1a2a"/>
-                        <!-- Claude Code text – Anthropic brand orange-cream -->
-                        <text x="86" y="57.5" font-family="Poppins,sans-serif" font-size="3.8" font-weight="600" fill="url(#cpu-text-gradient)" letter-spacing="0.2">Claude</text>
-                        <!-- Small code brackets as accent -->
-                        <text x="107" y="57.5" font-family="monospace" font-size="4.5" font-weight="700" fill="rgba(216,48,48,0.7)">&lt;/&gt;</text>
-                    </g>
-
-                    <!-- ── MASKS ── -->
-                    <defs>
-                        <mask id="cpu-mask-1"><path d="M 10 20 h 79.5 q 5 0 5 5 v 24"  stroke-width="0.5" stroke="white" fill="none"/></mask>
-                        <mask id="cpu-mask-2"><path d="M 180 10 h -69.7 q -5 0 -5 5 v 24" stroke-width="0.5" stroke="white" fill="none"/></mask>
-                        <mask id="cpu-mask-3"><path d="M 130 20 v 21.8 q 0 5 -5 5 h -10" stroke-width="0.5" stroke="white" fill="none"/></mask>
-                        <mask id="cpu-mask-4"><path d="M 170 80 v -21.8 q 0 -5 -5 -5 h -50" stroke-width="0.5" stroke="white" fill="none"/></mask>
-                        <mask id="cpu-mask-5"><path d="M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -20" stroke-width="0.5" stroke="white" fill="none"/></mask>
-                        <mask id="cpu-mask-6"><path d="M 94.8 95 v -36" stroke-width="0.5" stroke="white" fill="none"/></mask>
-                        <mask id="cpu-mask-7"><path d="M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 14" stroke-width="0.5" stroke="white" fill="none"/></mask>
-                        <mask id="cpu-mask-8"><path d="M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 20" stroke-width="0.5" stroke="white" fill="none"/></mask>
-
-                        <!-- Light orb radial gradients -->
-                        <radialGradient id="cpu-blue-grad"    fx="1"><stop offset="0%"   stop-color="#00E8ED"/><stop offset="50%"  stop-color="#0088FF"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                        <radialGradient id="cpu-yellow-grad"  fx="1"><stop offset="0%"   stop-color="#FFD800"/><stop offset="50%"  stop-color="#FFD800"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                        <radialGradient id="cpu-pinkish-grad" fx="1"><stop offset="0%"   stop-color="#830CD1"/><stop offset="50%"  stop-color="#FF008B"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                        <radialGradient id="cpu-white-grad"   fx="1"><stop offset="0%"   stop-color="white"  /><stop offset="100%" stop-color="transparent"/></radialGradient>
-                        <radialGradient id="cpu-green-grad"   fx="1"><stop offset="0%"   stop-color="#22c55e"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                        <radialGradient id="cpu-orange-grad"  fx="1"><stop offset="0%"   stop-color="#f97316"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                        <radialGradient id="cpu-cyan-grad"    fx="1"><stop offset="0%"   stop-color="#06b6d4"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-                        <radialGradient id="cpu-rose-grad"    fx="1"><stop offset="0%"   stop-color="#f43f5e"/><stop offset="100%" stop-color="transparent"/></radialGradient>
-
-                        <!-- CPU inner body gradient -->
-                        <linearGradient id="cpu-inner-grad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%"   stop-color="#D83030" stop-opacity="0.07"/>
-                            <stop offset="100%" stop-color="#032E42" stop-opacity="0.12"/>
-                        </linearGradient>
-
-                        <!-- CPU connection pin gradient -->
-                        <linearGradient id="cpu-connection-gradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%"  stop-color="#4F4F4F"/>
-                            <stop offset="60%" stop-color="#121214"/>
-                        </linearGradient>
-
-                        <!-- Animated shimmer on "Claude" text -->
-                        <linearGradient id="cpu-text-gradient" x1="0" y1="0" x2="1" y2="0">
-                            <stop offset="0%"  stop-color="#888">
-                                <animate attributeName="offset" values="-2;-1;0"  dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-                            </stop>
-                            <stop offset="25%" stop-color="white">
-                                <animate attributeName="offset" values="-1;0;1"   dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-                            </stop>
-                            <stop offset="50%" stop-color="#888">
-                                <animate attributeName="offset" values="0;1;2"    dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-                            </stop>
-                        </linearGradient>
-
-                        <!-- Drop shadow for CPU box -->
-                        <filter id="cpu-light-shadow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#D83030" flood-opacity="0.15"/>
-                            <feDropShadow dx="1.5" dy="1.5" stdDeviation="1" flood-color="black" flood-opacity="0.3"/>
-                        </filter>
-
-                        <!-- Endpoint dot marker -->
-                        <marker id="cpu-circle-marker" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="18" markerHeight="18">
-                            <circle cx="5" cy="5" r="2" fill="black" stroke="#2a2a2a" stroke-width="0.5">
-                                <animate attributeName="r" values="0;3;2" dur="0.5s"/>
-                            </circle>
-                        </marker>
-                    </defs>
-                </svg>
-                </div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Scaling Simplicity. Automating Intelligence.</p>
+            <h1 class="hero-title">Workflow automation,<br>engineered for <span class="highlight">your industry</span></h1>
+            <p class="hero-subtitle">Onezipp designs and builds custom automation systems for HR, Tech, Finance, Legal, Healthcare and more. Data-driven. No lock-in. Live in 2 weeks.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Book a Discovery Call</a>
+                <a href="#services" class="btn-secondary">See Our Services</a>
             </div>
         </div>
     </div>
@@ -1475,7 +1361,7 @@
 <!-- ============================
      SOCIAL PROOF BAR
      ============================ -->
-<section class="social-proof">
+<section class="social-proof glass-section">
     <div class="container">
         <p class="social-proof-label">Trusted by teams automating across industries</p>
         <div class="logos-row">
@@ -1492,11 +1378,11 @@
 <!-- ============================
      INDUSTRY SERVICES GRID
      ============================ -->
-<section class="industries section-padding" id="services">
+<section class="industries section-padding glass-section" id="services">
     <div class="container">
         <div class="section-header fade-in">
             <h2>Automation services built for your industry</h2>
-            <p>We analyzed hundreds of real automation requirements to build targeted service packages for each industry.</p>
+            <p>Onezipp analyzed hundreds of real automation requirements to build targeted service packages for each industry.</p>
         </div>
         <div class="industry-grid">
 
@@ -1657,7 +1543,7 @@
 <!-- ============================
      HOW IT WORKS
      ============================ -->
-<section class="how-it-works section-padding" id="process">
+<section class="how-it-works section-padding glass-section" id="process">
     <div class="container">
         <div class="section-header fade-in">
             <h2>From first call to live automation in 14 days</h2>
@@ -1676,7 +1562,7 @@
             <div class="timeline-step">
                 <div class="step-number">3</div>
                 <h3>Build</h3>
-                <p>We build, test, and iterate using n8n, Make, or Zapier -- whichever fits your stack.</p>
+                <p>Onezipp builds, tests, and iterates using n8n, Make, or Zapier -- whichever fits your stack.</p>
             </div>
             <div class="timeline-step">
                 <div class="step-number">4</div>
@@ -1690,15 +1576,15 @@
 <!-- ============================
      WHY ONEZIPP
      ============================ -->
-<section class="why-section section-padding" id="why">
+<section class="why-section section-padding glass-section" id="why">
     <div class="container">
         <div class="section-header fade-in">
-            <h2>Why oneZipp</h2>
+            <h2>Why Onezipp</h2>
         </div>
         <div class="value-grid">
             <div class="value-card fade-in">
                 <h3>Live in 2 weeks</h3>
-                <p>Most automations ship in under 14 days. We move fast because we have built for 10+ industries and know the patterns that work.</p>
+                <p>Most automations ship in under 14 days. Onezipp moves fast because we have built for 10+ industries and know the patterns that work.</p>
             </div>
             <div class="value-card fade-in">
                 <h3>No lock-in</h3>
@@ -1706,7 +1592,7 @@
             </div>
             <div class="value-card fade-in">
                 <h3>Data-driven</h3>
-                <p>We analyzed 500+ real job postings to understand what businesses need. Our services reflect actual market demand, not guesswork.</p>
+                <p>Onezipp analyzed 500+ real job postings to understand what businesses need. Our services reflect actual market demand, not guesswork.</p>
             </div>
         </div>
     </div>
@@ -1719,7 +1605,7 @@
     <div class="container">
         <div class="section-header fade-in">
             <h2>Ready to automate?</h2>
-            <p>Book a free 30-minute discovery call. We will map your workflows and show you exactly what we would automate.</p>
+            <p>Book a free 30-minute discovery call. Onezipp will map your workflows and show you exactly what we would automate.</p>
         </div>
         <form class="contact-form fade-in" action="https://formspree.io/f/XXXXX" method="POST">
             <div class="form-row">
@@ -1773,9 +1659,9 @@
         <div class="footer-inner">
             <div class="footer-left">
                 <a href="#" class="footer-logo">
-                    <img src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="oneZipp" />
+                    <img src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="Onezipp" />
                 </a>
-                <span class="footer-copy">&copy; 2026 oneZipp. All rights reserved.</span>
+                <span class="footer-copy">&copy; 2026 Onezipp. All rights reserved.</span>
             </div>
             <ul class="footer-links">
                 <li><a href="#services">Services</a></li>
@@ -1788,6 +1674,8 @@
         </div>
     </div>
 </footer>
+
+</div><!-- end .content-layer -->
 
 <!-- ============================
      SCRIPTS
@@ -1812,7 +1700,7 @@
         }
     })();
 
-    // Sticky nav shadow on scroll
+    // Sticky nav on scroll
     (function () {
         var nav = document.getElementById('main-nav');
         if (nav) {
