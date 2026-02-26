@@ -3,11 +3,12 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Overview
-The repository contains three main components:
+The repository contains four main components:
 
 1. **Google Apps Script** – `onezipp/` holds a set of `.gs` files that build an Upwork industry analysis dashboard in Google Sheets.
 2. **n8n workflow** – `upwork-email-classifier.json` defines an n8n flow that pulls Upwork emails from Gmail, classifies them with OpenAI, aggregates results, and outputs rankings.
 3. **Vercel deployment** – `vercel.json` rewrites the root URL to `novatech-onboarding-playbook.html` for a static playbook page.
+4. **Onezipp Landing Page** – a separate project at `/Users/pratik/Documents/onezipp-landing/` containing a single-page marketing site for the onezipp.com automation agency. See that project's own `CLAUDE.md` for details.
 
 Each component is independent but often used together: the n8n flow can feed data into the Apps Script dashboard, and the playbook page explains the workflow.
 
