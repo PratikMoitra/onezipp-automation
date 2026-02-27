@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Founder — Pratik | Onezipp</title>
+    <meta name="description"
+        content="Pratik — 25+ years designing and securing enterprise architectures globally. CCIE, CCSP, AWS certified. Founder of Onezipp.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #E14F37;
+            --navy: #0f172a;
+            --navy-deep: #080e1e;
+            --text: #0f172a;
+            --text-sub: #475569;
+            --text-muted: #94a3b8;
+            --border: rgba(15, 23, 42, .07);
+            --surface: #ffffff;
+            --radius: 16px;
+            --transition: .3s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fdfdfd;
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            line-height: 1.15
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        /* === TOP BAR === */
+        .topbar {
+            background: var(--navy-deep);
+            color: #fff;
+            font-size: 12px;
+            padding: 7px 0;
+            font-weight: 500;
+            letter-spacing: .2px
+        }
+
+        .topbar .tb {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .topbar a {
+            color: #fff;
+            opacity: .75;
+            margin-left: 16px;
+            transition: opacity .2s
+        }
+
+        .topbar a:hover {
+            opacity: 1
+        }
+
+        /* === NAVBAR === */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, .88);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+            transition: transform .35s ease
+        }
+
+        .navbar.hide {
+            transform: translateY(-100%)
+        }
+
+        .navbar .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .nav-logo img {
+            height: 28px
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text);
+            transition: color .2s
+        }
+
+        .nav-menu a:hover {
+            color: var(--red)
+        }
+
+        .btn-cta {
+            background: var(--red);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(225, 79, 55, .25);
+            transition: all .25s
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(225, 79, 55, .25)
+        }
+
+        /* === BREADCRUMB === */
+        .breadcrumb {
+            padding: 100px 24px 0;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 14px;
+            color: var(--text-muted)
+        }
+
+        .breadcrumb a {
+            color: var(--text-muted);
+            transition: color .2s
+        }
+
+        .breadcrumb a:hover {
+            color: var(--red)
+        }
+
+        /* === FOUNDER HERO === */
+        .founder-hero {
+            padding: 40px 0 60px
+        }
+
+        .founder-top {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 48px
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 4px solid rgba(225, 79, 55, .15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .08)
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .founder-intro h1 {
+            font-size: 38px;
+            margin-bottom: 4px;
+            letter-spacing: -.5px
+        }
+
+        .founder-intro .founder-subtitle {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--red);
+            letter-spacing: .5px;
+            margin-bottom: 4px
+        }
+
+        .founder-intro .role {
+            font-size: 15px;
+            color: var(--text-sub);
+            margin-bottom: 16px
+        }
+
+        .certs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px
+        }
+
+        .cert {
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(225, 79, 55, .06);
+            color: var(--red);
+            border: 1px solid rgba(225, 79, 55, .1)
+        }
+
+        .founder-intro p {
+            font-size: 15px;
+            color: var(--text-sub);
+            line-height: 1.7
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--navy);
+            transition: all .25s
+        }
+
+        .social-links a:hover {
+            background: var(--red);
+            transform: translateY(-2px)
+        }
+
+        /* === SECTIONS === */
+        .section {
+            margin-bottom: 56px
+        }
+
+        .section h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+            letter-spacing: -.3px
+        }
+
+        /* === VALUES GRID === */
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px
+        }
+
+        .value-item {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: #fff;
+            transition: all var(--transition)
+        }
+
+        .value-item:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .06);
+            transform: translateY(-3px)
+        }
+
+        .value-item h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: var(--red)
+        }
+
+        .value-item p {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 1.6
+        }
+
+        /* === CTA BOX === */
+        .cta-box {
+            background: linear-gradient(170deg, var(--navy), var(--navy-deep));
+            color: #fff;
+            border-radius: 20px;
+            padding: 52px;
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(225, 79, 55, .1), transparent 70%)
+        }
+
+        .cta-box h2 {
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 12px;
+            border: none;
+            padding: 0
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, .5);
+            font-size: 15px;
+            margin-bottom: 28px
+        }
+
+        .cta-box .btn-cta {
+            font-size: 16px;
+            padding: 14px 38px
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background: var(--navy-deep);
+            padding: 32px 0;
+            border-top: 1px solid rgba(255, 255, 255, .04);
+            margin-top: 80px
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        .footer-logo img {
+            height: 22px
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .25)
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+            list-style: none
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .4);
+            transition: color .2s
+        }
+
+        .footer-links a:hover {
+            color: #fff
+        }
+
+        /* === RESPONSIVE === */
+        @media(max-width:768px) {
+            .founder-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center
+            }
+
+            .certs {
+                justify-content: center
+            }
+
+            .social-links {
+                justify-content: center
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr
+            }
+
+            .nav-menu {
+                display: none
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- === TOP BAR === -->
+    <div class="topbar">
+        <div class="tb">
+            <div>Oslo, Norway | Enterprise-Grade Automation</div>
+            <div><a href="mailto:Connect@onezipp.com">Connect@onezipp.com</a><a href="tel:+19109940870">+1 (910)
+                    994-0870</a></div>
+        </div>
+    </div>
+
+    <!-- === NAVBAR === -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img
+                    src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="Onezipp"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#why">Why Onezipp?</a></li>
+                <li><a href="founder.html" style="color:var(--red)">Meet the Founder</a></li>
+                <li><a href="index.html#contact" class="btn-cta">Let's Talk</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- === BREADCRUMB === -->
+    <div class="breadcrumb"><a href="index.html">Home</a> / <strong>Meet the Founder</strong></div>
+
+    <!-- === FOUNDER HERO === -->
+    <section class="founder-hero">
+        <div class="container">
+            <div class="founder-top">
+                <div class="avatar"><img src="pratik-moitra.jpg" alt="Pratik — Founder of Onezipp"></div>
+                <div class="founder-intro">
+                    <h1>Pratik</h1>
+                    <p class="founder-subtitle">Founder of Onezipp</p>
+                    <p class="role">Enterprise Technology &amp; Security Architect</p>
+                    <div class="certs">
+                        <span class="cert">CCIE #48978</span>
+                        <span class="cert">CCSP</span>
+                        <span class="cert">GCSA</span>
+                        <span class="cert">AWS Certified</span>
+                        <span class="cert">MBA in IT</span>
+                    </div>
+                    <p>With over 25 years in enterprise technology, I've led digital transformation programs at some of
+                        the world's most demanding organisations. At Onezipp, I channel that experience into building
+                        automation systems that are fast, secure, and built to last — without the enterprise price tag.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/pratikmoitra/" target="_blank" aria-label="LinkedIn"><svg
+                                width="16" height="16" viewBox="0 0 24 24" fill="#fff">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                        <a href="https://www.linkedin.com/company/onezipp-norge-as/" target="_blank"
+                            aria-label="Onezipp LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff">
+                                <path d="M3 9l9 6 9-6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <path d="M21 3H3l9 6z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automation Philosophy -->
+            <div class="section">
+                <h2>Automation Engineered for the Enterprise</h2>
+                <div class="values-grid" style="grid-template-columns:1fr;gap:24px;margin-bottom:40px">
+                    <div class="value-item" style="padding:36px">
+                        <h3 style="font-size:20px;margin-bottom:16px">Architecting for Scale, Security, and Reliability
+                        </h3>
+                        <p style="font-size:15px;margin-bottom:16px">With a background in designing, securing, and
+                            scaling complex IT infrastructures for global enterprises, I bring a unique perspective to
+                            workflow automation. At Onezipp, the focus goes beyond just "connecting apps" — it's about
+                            building robust, secure data pipelines and intelligent systems that can reliably handle
+                            business-critical operations.</p>
+                        <p style="font-size:15px">Whether integrating n8n, deploying Make.com architectures, or building
+                            custom AI agents with Claude, the methodology remains the same: design for resilience,
+                            ensure strict access control, and eliminate technical debt from day one.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Props -->
+            <div class="section">
+                <h2>What This Means for Your Automation</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <h3>Enterprise Discipline, Startup Speed</h3>
+                        <p>Processes honed at Fortune 500 companies, delivered with the agility of a one-person
+                            operation. No bureaucracy, no ticket queues.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Security Is Built In</h3>
+                        <p>With CCIE, CCSP, and years in cybersecurity, every automation we build follows security best
+                            practices — data handling, access control, and compliance.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Architect-Level Thinking</h3>
+                        <p>We don't just connect tools. We design systems that scale, fail gracefully, and integrate
+                            with your existing infrastructure without creating technical debt.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Real Accountability</h3>
+                        <p>When you work with Onezipp, you work directly with the founder. No handoffs to junior staff.
+                            One point of contact from discovery to deployment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h2>Let's build something together</h2>
+                <p>Book a free 45-minute call. I'll personally map your workflows and show you exactly what I'd
+                    automate.</p>
+                <a href="index.html#contact" class="btn-cta">Let's Talk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <a href="index.html" class="footer-logo"><img
+                        src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="Onezipp"></a>
+                <span class="footer-copy">© 2026 Onezipp. All rights reserved.</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#why">Why Onezipp?</a></li>
+                <li><a href="mailto:Connect@onezipp.com">Connect@onezipp.com</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        let lastY = window.scrollY; const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { if (window.scrollY > lastY && window.scrollY > 100) { nav.classList.add('hide') } else { nav.classList.remove('hide') } lastY = window.scrollY });
+    </script>
+</body>
+
+</html>
