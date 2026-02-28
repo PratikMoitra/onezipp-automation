@@ -969,29 +969,57 @@
 
         .ind-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
         }
 
         .ind-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 28px;
+            padding: 32px 28px;
             display: flex;
-            gap: 16px;
-            transition: all var(--transition)
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .ind-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(225, 79, 55, 0.04), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
         }
 
         .ind-card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-3px)
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-6px);
+            border-color: rgba(225, 79, 55, 0.3);
+        }
+
+        .ind-card:hover::before {
+            opacity: 1;
         }
 
         .ind-bar {
-            width: 4px;
+            width: 48px;
+            height: 6px;
             border-radius: 4px;
-            flex-shrink: 0
+            margin-bottom: 20px;
+            flex-shrink: 0;
+            transition: width 0.3s ease;
+        }
+
+        .ind-card:hover .ind-bar {
+            width: 72px;
         }
 
         .ind-card h3 {
@@ -2019,7 +2047,7 @@
                         <h3>Custom Web &amp; App Development</h3>
                         <p>Need to start from scratch or refresh an existing site? We build and develop custom apps and
                             websites from the ground up, tailored specifically to your business operations.</p><a
-                            href="#" class="ind-link">View services →</a>
+                            href="industries/custom-web-app.html" class="ind-link">View services →</a>
                     </div>
                 </div>
                 <div class="ind-card reveal">
@@ -2027,7 +2055,8 @@
                     <div>
                         <h3>Other Industries & Common Tasks</h3>
                         <p>Specialised lead scraping, outbound email and SMS outreach, robust Twilio integrations with
-                            A2P registrations, and cross-industry automation.</p><a href="#" class="ind-link">View
+                            A2P registrations, and cross-industry automation.</p><a
+                            href="industries/other-industries.html" class="ind-link">View
                             services →</a>
                     </div>
                 </div>
@@ -2179,22 +2208,6 @@
                             save
                             time, reduce costs, and scale operations with intelligent automation.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- === ABOUT FOUNDER TEASER === -->
-    <section class="section-pad">
-        <div class="container">
-            <div class="founder-teaser reveal">
-                <div class="founder-photo"><img src="pratik-profile-new.jpg" alt="Pratik"></div>
-                <div class="founder-meta">
-                    <h4>Meet Pratik</h4>
-                    <div class="subtitle">Founder of Onezipp</div>
-                    <p>25+ years designing and securing enterprise architectures globally. CCIE, CCSP, AWS certified.
-                        MBA in IT. Pratik brings Fortune 500 discipline to every automation delivery.</p>
-                    <a href="founder.html" class="founder-link">Meet the Founder →</a>
                 </div>
             </div>
         </div>
