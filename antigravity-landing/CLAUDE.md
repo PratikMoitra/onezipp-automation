@@ -30,6 +30,10 @@ If you are reading this file as a newly initialized Assistant (Gemini, Claude / 
 2. **Commit Updates:** Whenever you make structural adjustments to the project, be sure to update this metadata file if the scope, stack, or core dependencies change.
 3. **Run Checks:** Review responsive layouts across mobile sizes (`@media (max-width: 768px)`) whenever modifying card grids or Hero features. Ensure elements properly wrap and do not overflow cleanly.
 4. **Workflow Files:** Familiarize yourself with `/workflows` and slash commands if configured within the environment.
+5. **Specialized Sub-Agents & Rulesets:** You must proactively invoke specialized protocols, internal sub-agents, or strict rulesets for the following during every task:
+   - **Security Checks Sub-Agent:** Continuously scan for and prevent exposed API keys, `.env` file mishandling, logic flaws, and ensure the authenticity of integrated external libraries/CDNs.
+   - **Performance Optimization Sub-Agent:** Validate efficient code rendering, prioritize image/asset loading optimization, prevent UI layout thrashing, and minimize the footprint of scripts and animations (IntersectionObserver).
+   - **Industry Standard UI/UX Sub-Agent:** Strictly enforce a premium aesthetic (modern 'Outfit' typography, aesthetic UI cards, hover micro-animations, color harmony, responsive precision) that aligns with top-tier agency deliverables.
 
 ## Current State Highlights
 - Sticky headers (`.ind-grid` section) are mapped out using `position: sticky` on the `.section-head` to pin titles gracefully as the user scrolls.
