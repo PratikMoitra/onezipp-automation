@@ -794,21 +794,7 @@
             gap: 24px
         }
 
-        .ind-container {
-            position: relative;
-            z-index: 10;
-        }
 
-        .ind-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            position: sticky;
-            top: 100px;
-            background: var(--bg);
-            padding-bottom: 40px;
-            z-index: 20;
-        }
 
         .why-card {
             padding: 36px 28px;
@@ -966,12 +952,24 @@
         /* === INDUSTRIES === */
         .industries {
             background: var(--surface-alt);
-            border-top: 1px solid var(--border)
+            border-top: 1px solid var(--border);
+            position: relative;
+        }
+
+        .industries .section-head {
+            position: sticky;
+            top: 90px;
+            z-index: 10;
+            background: var(--surface-alt);
+            padding-bottom: 24px;
+            padding-top: 24px;
+            margin-top: -24px;
+            margin-bottom: 24px;
         }
 
         .ind-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px
         }
 
@@ -1861,87 +1859,85 @@
                 <h2>Automation for your industry</h2>
                 <p>Targeted service packages built from real market demand analysis across 10+ industries.</p>
             </div>
-            <div class="ind-container">
-                <div class="ind-grid">
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#E14F37"></div>
-                        <div>
-                            <h3>HR &amp; Recruitment</h3>
-                            <p>Resume screening, onboarding workflows, payroll distribution.</p><a
-                                href="industries/hr-recruitment.html" class="ind-link">View services →</a>
-                        </div>
+            <div class="ind-grid">
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#E14F37"></div>
+                    <div>
+                        <h3>HR &amp; Recruitment</h3>
+                        <p>Resume screening, onboarding workflows, payroll distribution.</p><a
+                            href="industries/hr-recruitment.html" class="ind-link">View services →</a>
                     </div>
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#2563EB"></div>
-                        <div>
-                            <h3>Tech &amp; IT</h3>
-                            <p>CI/CD pipelines, monitoring alerts, helpdesk automation.</p><a
-                                href="industries/tech-it.html" class="ind-link">View services →</a>
-                        </div>
+                </div>
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#2563EB"></div>
+                    <div>
+                        <h3>Tech &amp; IT</h3>
+                        <p>CI/CD pipelines, monitoring alerts, helpdesk automation.</p><a href="industries/tech-it.html"
+                            class="ind-link">View services →</a>
                     </div>
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#E11D48"></div>
-                        <div>
-                            <h3>Marketing &amp; Growth</h3>
-                            <p>Lead nurture, social scheduling, reporting dashboards.</p><a
-                                href="industries/marketing-growth.html" class="ind-link">View services →</a>
-                        </div>
+                </div>
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#E11D48"></div>
+                    <div>
+                        <h3>Marketing &amp; Growth</h3>
+                        <p>Lead nurture, social scheduling, reporting dashboards.</p><a
+                            href="industries/marketing-growth.html" class="ind-link">View services →</a>
                     </div>
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#D97706"></div>
-                        <div>
-                            <h3>Finance &amp; Accounting</h3>
-                            <p>Invoice processing, bank reconciliation, expense automation.</p><a
-                                href="industries/finance-accounting.html" class="ind-link">View services →</a>
-                        </div>
+                </div>
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#D97706"></div>
+                    <div>
+                        <h3>Finance &amp; Accounting</h3>
+                        <p>Invoice processing, bank reconciliation, expense automation.</p><a
+                            href="industries/finance-accounting.html" class="ind-link">View services →</a>
                     </div>
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#4338CA"></div>
-                        <div>
-                            <h3>Legal</h3>
-                            <p>Contract review, deadline tracking, client intake automation.</p><a
-                                href="industries/legal.html" class="ind-link">View services →</a>
-                        </div>
+                </div>
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#4338CA"></div>
+                    <div>
+                        <h3>Legal</h3>
+                        <p>Contract review, deadline tracking, client intake automation.</p><a
+                            href="industries/legal.html" class="ind-link">View services →</a>
                     </div>
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#EA580C"></div>
-                        <div>
-                            <h3>Construction</h3>
-                            <p>Project tracking, permit filing, subcontractor coordination.</p><a
-                                href="industries/construction.html" class="ind-link">View services →</a>
-                        </div>
+                </div>
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#EA580C"></div>
+                    <div>
+                        <h3>Construction</h3>
+                        <p>Project tracking, permit filing, subcontractor coordination.</p><a
+                            href="industries/construction.html" class="ind-link">View services →</a>
                     </div>
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#0D9488"></div>
-                        <div>
-                            <h3>Electrical &amp; Trades</h3>
-                            <p>Job quoting, dispatch scheduling, digital job cards.</p><a
-                                href="industries/electrical-trades.html" class="ind-link">View services →</a>
-                        </div>
+                </div>
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#0D9488"></div>
+                    <div>
+                        <h3>Electrical &amp; Trades</h3>
+                        <p>Job quoting, dispatch scheduling, digital job cards.</p><a
+                            href="industries/electrical-trades.html" class="ind-link">View services →</a>
                     </div>
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#0891B2"></div>
-                        <div>
-                            <h3>Healthcare</h3>
-                            <p>Appointment reminders, patient intake, billing automation.</p><a
-                                href="industries/healthcare.html" class="ind-link">View services →</a>
-                        </div>
+                </div>
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#0891B2"></div>
+                    <div>
+                        <h3>Healthcare</h3>
+                        <p>Appointment reminders, patient intake, billing automation.</p><a
+                            href="industries/healthcare.html" class="ind-link">View services →</a>
                     </div>
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#059669"></div>
-                        <div>
-                            <h3>eCommerce</h3>
-                            <p>Order management, inventory sync, abandoned cart recovery.</p><a
-                                href="industries/ecommerce.html" class="ind-link">View services →</a>
-                        </div>
+                </div>
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#059669"></div>
+                    <div>
+                        <h3>eCommerce</h3>
+                        <p>Order management, inventory sync, abandoned cart recovery.</p><a
+                            href="industries/ecommerce.html" class="ind-link">View services →</a>
                     </div>
-                    <div class="ind-card reveal">
-                        <div class="ind-bar" style="background:#032E42"></div>
-                        <div>
-                            <h3>Real Estate</h3>
-                            <p>Lead follow-up, listing syndication, transaction management.</p><a
-                                href="industries/real-estate.html" class="ind-link">View services →</a>
-                        </div>
+                </div>
+                <div class="ind-card reveal">
+                    <div class="ind-bar" style="background:#032E42"></div>
+                    <div>
+                        <h3>Real Estate</h3>
+                        <p>Lead follow-up, listing syndication, transaction management.</p><a
+                            href="industries/real-estate.html" class="ind-link">View services →</a>
                     </div>
                 </div>
             </div>
