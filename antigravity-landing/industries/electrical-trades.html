@@ -11,8 +11,6 @@
     <style>
         :root{--brand-red:#D83030;--brand-red-hover:#E23C1B;--brand-navy:#032E42;--brand-dark:#0a0a0a;--brand-black:#101010;--body-bg:#FFFFFF;--section-alt:#F8F9FA;--card-border:rgba(0,0,0,0.08);--card-shadow:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);--card-shadow-hover:0 8px 24px rgba(0,0,0,0.08),0 2px 8px rgba(0,0,0,0.04);--text-primary:#0a0a0a;--text-secondary:#363636;--text-muted:#6B7280;--border-light:#EDEDED;--accent:#0D9488}
         *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Roboto',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--body-bg);color:var(--text-primary);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}.container{max-width:1200px;margin:0 auto;padding:0 24px}.section-padding{padding:100px 0}
-        .top-toolbar{position:fixed;top:0;left:0;right:0;z-index:1002;background:var(--brand-navy);height:36px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(255,255,255,0.08)}.top-toolbar-inner{max-width:1200px;width:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between}.toolbar-left{display:flex;align-items:center;gap:8px}.toolbar-left a{color:#fff;text-decoration:none;font-family:'Roboto',sans-serif;font-size:14px}.toolbar-left a:hover{opacity:.8}.toolbar-left svg{flex-shrink:0}.toolbar-right{display:flex;align-items:center;gap:16px}.toolbar-phone{color:#fff;text-decoration:none;font-family:'Roboto',sans-serif;font-size:14px;display:flex;align-items:center;gap:6px}.toolbar-phone:hover{opacity:.8}.toolbar-social{display:flex;align-items:center;gap:12px}.toolbar-social a{color:#fff;text-decoration:none;display:flex;align-items:center}.toolbar-social a:hover{opacity:.7}
-        .main-nav{position:fixed;top:36px;left:0;right:0;z-index:1001;background:#fff;height:70px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.06);transition:box-shadow .3s ease}.main-nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,0.1)}.main-nav-inner{max-width:1200px;width:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between}.nav-logo img{height:25px;width:auto;display:block}.nav-links{display:flex;align-items:center;gap:32px;list-style:none}.nav-links li{position:relative}.nav-links a{color:#101010;text-decoration:none;font-family:'Poppins',sans-serif;font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.3px;transition:color .2s ease;display:flex;align-items:center;gap:4px}.nav-links a:hover{color:#D83030}.nav-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:16px;background:#fff;border:1px solid var(--border-light);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.1);min-width:220px;padding:8px 0;opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s ease,margin-top .2s ease;z-index:100}.nav-links li:hover .nav-dropdown{opacity:1;visibility:visible;margin-top:8px}.nav-dropdown a{display:block;padding:10px 20px;font-size:14px;font-weight:500;text-transform:none;color:var(--text-primary);letter-spacing:0}.nav-dropdown a:hover{background:var(--section-alt);color:var(--brand-red)}.nav-cta{background:var(--brand-red)!important;color:#fff!important;padding:10px 24px!important;border-radius:9999px!important;font-size:14px!important;font-weight:600!important;letter-spacing:.3px!important;transition:background .2s ease!important}.nav-cta:hover{background:var(--brand-red-hover)!important;color:#fff!important}.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}.nav-mobile-toggle svg{display:block}
         .breadcrumb{padding-top:130px;padding-bottom:0}.breadcrumb-inner{display:flex;align-items:center;gap:8px;font-family:'Roboto',sans-serif;font-size:14px;color:var(--text-muted)}.breadcrumb-inner a{color:var(--text-muted);text-decoration:none;transition:color .2s}.breadcrumb-inner a:hover{color:var(--brand-red)}.breadcrumb-inner .sep{color:var(--border-light)}.breadcrumb-inner .current{color:var(--text-primary);font-weight:500}
         .industry-hero{padding:48px 0 64px;background:#fff;position:relative;overflow:hidden}.industry-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(216,48,48,0.02) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}.hero-content{max-width:720px}.hero-badge{display:inline-block;padding:6px 16px;border-radius:9999px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}.industry-hero h1{font-size:48px;font-weight:700;line-height:1.15;color:var(--brand-dark);letter-spacing:-1px;margin-bottom:20px}.industry-hero .lead{font-size:18px;line-height:1.7;color:var(--text-secondary);margin-bottom:32px;max-width:600px}
         .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--brand-red);color:#fff;padding:14px 32px;border-radius:9999px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;border:none;cursor:pointer;transition:background .2s ease,transform .15s ease,box-shadow .2s ease}.btn-primary:hover{background:var(--brand-red-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(216,48,48,0.3)}.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--brand-navy);padding:14px 32px;border-radius:9999px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border:2px solid var(--brand-navy);cursor:pointer;transition:background .2s ease,color .2s ease}.btn-secondary:hover{background:var(--brand-navy);color:#fff}
@@ -23,15 +21,283 @@
         .cta-section{background:var(--brand-navy);color:#fff}.cta-section .section-header h2{color:#fff}.cta-section .section-header p{color:rgba(255,255,255,0.6)}.contact-form{max-width:640px;margin:0 auto}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.form-group{display:flex;flex-direction:column}.form-group.full-width{grid-column:1/-1}.form-group label{font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.7);margin-bottom:6px}.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:4px;padding:12px 16px;font-size:15px;font-family:'Roboto',sans-serif;color:#fff;outline:none;transition:border-color .2s ease}.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.3)}.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--brand-red)}.form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='rgba(255,255,255,0.5)' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}.form-group select option{background:var(--brand-navy);color:#fff}.form-group textarea{resize:vertical;min-height:100px}.form-actions{margin-top:24px;text-align:center}.btn-cta-submit{display:inline-flex;align-items:center;gap:8px;background:var(--brand-red);color:#fff;padding:14px 40px;border-radius:9999px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;text-decoration:none;border:none;cursor:pointer;transition:background .2s ease,transform .15s ease}.btn-cta-submit:hover{background:var(--brand-red-hover);transform:translateY(-1px)}.form-alt{text-align:center;margin-top:24px;font-size:14px;color:rgba(255,255,255,0.4)}.form-alt a{color:var(--brand-red);text-decoration:none}.form-alt a:hover{text-decoration:underline}
         .footer{background:#021824;border-top:1px solid rgba(255,255,255,0.04);padding:32px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between}.footer-left{display:flex;align-items:center;gap:16px}.footer-logo img{height:22px;width:auto;display:block}.footer-copy{font-size:13px;color:rgba(255,255,255,0.3)}.footer-links{display:flex;gap:32px;list-style:none}.footer-links a{font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .2s ease}.footer-links a:hover{color:#fff}.footer-email a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .2s ease}.footer-email a:hover{color:var(--brand-red)}
         .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
-        @media(max-width:768px){.top-toolbar{height:32px}.toolbar-right{display:none}.main-nav{top:32px;height:60px}.nav-links{display:none}.nav-mobile-toggle{display:block}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:#fff;padding:24px;gap:16px;border-bottom:1px solid var(--border-light);box-shadow:0 4px 12px rgba(0,0,0,0.08)}.nav-links.open .nav-dropdown{position:static;transform:none;box-shadow:none;border:none;opacity:1;visibility:visible;margin-top:0;padding:0 0 0 16px}.breadcrumb{padding-top:116px}.industry-hero h1{font-size:32px}.data-grid{grid-template-columns:1fr}.niche-grid{grid-template-columns:1fr}.benefits-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.section-header h2{font-size:28px}.section-padding{padding:72px 0}.footer-inner{flex-direction:column;gap:20px;text-align:center}.footer-left{flex-direction:column;gap:8px}}
+        @media(max-width:768px){.breadcrumb{padding-top:116px}.industry-hero h1{font-size:32px}.data-grid{grid-template-columns:1fr}.niche-grid{grid-template-columns:1fr}.benefits-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.section-header h2{font-size:28px}.section-padding{padding:72px 0}.footer-inner{flex-direction:column;gap:20px;text-align:center}.footer-left{flex-direction:column;gap:8px}}
         @media(max-width:480px){.industry-hero h1{font-size:28px}.section-header h2{font-size:24px}.section-padding{padding:56px 0}.container{padding:0 16px}.data-card .data-value{font-size:32px}}
+    
+        /* === UNIFIED HEADER CSS === */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap');
+        
+        .nav-wrapper {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 0;
+            position: relative;
+            transition: transform .35s ease;
+        }
+        
+        .navbar.hide {
+            transform: translateY(-100%)
+        }
+
+        .capsule-nav {
+            position: fixed;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid #e2e8f0;
+            border-radius: 999px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            z-index: 9999;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .capsule-nav.visible {
+            top: 24px;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .cap-link {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #0f172a;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 999px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .cap-link:hover {
+            background: #f8fafc;
+            color: #e14f37;
+        }
+
+        .cap-btn {
+            background: #e14f37;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 999px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cap-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(225, 79, 55, 0.4);
+        }
+
+        .topbar {
+            background: #020617;
+            color: #fff;
+            font-size: 12px;
+            padding: 7px 0;
+            font-weight: 500;
+            letter-spacing: .2px
+        }
+
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            opacity: .85
+        }
+
+        .topbar-right {
+            display: flex;
+            gap: 20px
+        }
+
+        .topbar-right a {
+            color: #fff;
+            opacity: .75;
+            transition: opacity .2s;
+            text-decoration: none;
+        }
+
+        .topbar-right a:hover {
+            opacity: 1
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-logo img {
+            height: 28px
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+            margin: 0;
+        }
+
+        .nav-menu a {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: #0f172a;
+            transition: color .2s;
+            text-decoration: none;
+        }
+
+        .nav-menu a:hover {
+            color: #e14f37
+        }
+
+        .btn-cta {
+            background: #e14f37;
+            color: #fff !important;
+            padding: 10px 26px;
+            border-radius: 999px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700 !important;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            transition: all .25s;
+            box-shadow: 0 2px 12px rgba(225, 79, 55, 0.4);
+            text-decoration: none;
+        }
+
+        .btn-cta:hover {
+            background: #c8412c;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(225, 79, 55, 0.4);
+            color: #fff;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer
+        }
+
+        @media (max-width: 900px) {
+            .topbar { display: none; }
+            .capsule-nav { display: none !important; }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(12px);
+                padding: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                border-bottom: 1px solid #e2e8f0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            .nav-menu.open {
+                display: flex;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+        }
+
     </style>
 </head>
 <body>
-<div class="top-toolbar"><div class="top-toolbar-inner"><div class="toolbar-left"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:hello@onezipp.com">hello@onezipp.com</a></div><div class="toolbar-right"><a href="tel:+1234567890" class="toolbar-phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(123) 456-7890</a><div class="toolbar-social"><a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div></div></div></div>
-<nav class="main-nav" id="main-nav"><div class="main-nav-inner"><a href="../onezipp-landing.html" class="nav-logo"><img src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="oneZipp"/></a><ul class="nav-links" id="nav-links"><li><a href="../onezipp-landing.html">HOME</a></li><li><a href="../onezipp-landing.html#services">SERVICES</a></li><li><a href="../onezipp-landing.html#services" class="dropdown-toggle">INDUSTRIES <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="nav-dropdown"><a href="hr-recruitment.html">HR &amp; Recruitment</a><a href="tech-it.html">Tech &amp; IT</a><a href="marketing-growth.html">Marketing &amp; Growth</a><a href="finance-accounting.html">Finance &amp; Accounting</a><a href="legal.html">Legal</a><a href="construction.html">Construction</a><a href="electrical-trades.html">Electrical &amp; Trades</a><a href="healthcare.html">Healthcare</a><a href="ecommerce.html">eCommerce</a><a href="real-estate.html">Real Estate</a></div></li><li><a href="../onezipp-landing.html#process">PROCESS</a></li><li><a href="#contact">CONTACT</a></li><li><a href="#contact" class="nav-cta">Get a Quote</a></li></ul><button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#101010" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></nav>
 
-<div class="breadcrumb"><div class="container"><div class="breadcrumb-inner"><a href="../onezipp-landing.html">Home</a><span class="sep">/</span><a href="../onezipp-landing.html#services">Industries</a><span class="sep">/</span><span class="current">Electrical & Trades</span></div></div></div>
+    <!-- === TOP BAR === -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-left">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                    <circle cx="12" cy="10" r="3" />
+                    <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z" />
+                </svg>
+                Oslo, Norway · Enterprise-Grade Automation
+            </div>
+            <div class="topbar-right">
+                <a href="mailto:Connect@onezipp.com">Connect@onezipp.com</a>
+                <a href="tel:+19109940870">+1 (910) 994-0870</a>
+                <a href="tel:+447447193940">+44 74 4719 3940</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- === NAVBAR & CAPSULE === -->
+    <div class="nav-wrapper">
+        <nav class="navbar" id="navbar">
+            <div class="container">
+                <a href="../index.html" class="nav-logo"><img
+                        src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png"
+                        alt="Onezipp — Workflow Automation"></a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#why">Why Onezipp?</a></li>
+                    <li><a href="../index.html#process">Process</a></li>
+                    <li><a href="../founder.html">Meet the Founder</a></li>
+                    <li><a href="#contact" class="btn-cta" onclick="event.preventDefault(); document.getElementById('contact') ? document.getElementById('contact').scrollIntoView() : window.location.href='../index.html#contact'">Let's Talk</a>
+                    </li>
+                </ul>
+                <button class="mobile-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('open')"
+                    aria-label="Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Sticky Capsule Nav (Appears on scroll) -->
+        <div class="capsule-nav" id="capsuleNav">
+            <a href="../index.html" class="cap-logo" style="display:flex;align-items:center;margin-right:8px;"><img
+                    src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="Onezipp"
+                    style="height:20px;width:auto;"></a>
+            <a href="../index.html#industries" class="cap-link">Industries</a>
+            <a href="../index.html#services" class="cap-link">Services</a>
+            <a href="../index.html#process" class="cap-link">Process</a>
+            <a href="../founder.html" class="cap-link">Founder</a>
+            <a href="#contact" class="cap-btn" onclick="event.preventDefault(); document.getElementById('contact') ? document.getElementById('contact').scrollIntoView() : window.location.href='../index.html#contact'">Let's Talk</a>
+        </div>
+    </div>
+
+    <div class="breadcrumb"><div class="container"><div class="breadcrumb-inner"><a href="../onezipp-landing.html">Home</a><span class="sep">/</span><a href="../onezipp-landing.html#services">Industries</a><span class="sep">/</span><span class="current">Electrical & Trades</span></div></div></div>
 
 <section class="industry-hero"><div class="container"><div class="hero-content">
     <span class="hero-badge" style="background:rgba(13,148,136,0.1);color:#0D9488;">MEDIUM PRIORITY</span>
@@ -77,5 +343,26 @@
 (function(){var n=document.getElementById('main-nav');if(n){window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>20)})}})();
 (function(){var f=document.querySelectorAll('.fade-in');if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');o.unobserve(en.target)}})},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});f.forEach(function(el){o.observe(el)})}else{f.forEach(function(el){el.classList.add('visible')})}})();
 </script>
+
+    <!-- Dynamically Injected unified Header Logic -->
+    <script>
+        const navWrapper = document.querySelector('.nav-wrapper');
+        const capsuleNav = document.getElementById('capsuleNav');
+        if(capsuleNav) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) { capsuleNav.classList.add('visible'); } 
+                else { capsuleNav.classList.remove('visible'); }
+            });
+        }
+        let lastY = window.scrollY; const nav = document.getElementById('navbar');
+        if(nav) {
+            window.addEventListener('scroll', () => { 
+                if (window.scrollY > lastY && window.scrollY > 120) { nav.classList.add('hide'); } 
+                else { nav.classList.remove('hide'); } 
+                lastY = window.scrollY; 
+            });
+        }
+    </script>
+
 </body>
 </html>
