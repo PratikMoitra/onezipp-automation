@@ -1,4 +1,4 @@
-# OneZipp Landing Page Project
+# OneZipp Landing Page Project (Gemini AI Ruleset)
 
 ## Project Overview
 This project is the primary landing page website for **OneZipp**, an automation agency focused on providing business workflow automations using platforms like n8n, Zapier, and Make.com. The site emphasizes speed, reliability, and enterprise-grade architecture (backed by 25+ years of experience).
@@ -25,7 +25,7 @@ This project is the primary landing page website for **OneZipp**, an automation 
 5. **Services Section:** In addition to industry-specific automations (Real Estate, Healthcare, Tech, etc.), OneZipp provides **Custom Web & App Development** integrating external API calls natively.
 
 ## Next LLM / AI Instance Instructions
-If you are reading this file as a newly initialized Assistant (Gemini, Claude / Opus / Sonnet / Haiku):
+If you are reading this file as a newly initialized Assistant (**Gemini Instance**):
 1. **Branch Context:** Check out or ensure you remain in the `staging` branch.
 2. **Commit Updates:** Whenever you make structural adjustments to the project, be sure to update this metadata file if the scope, stack, or core dependencies change.
 3. **Run Checks:** Review responsive layouts across mobile sizes (`@media (max-width: 768px)`) whenever modifying card grids or Hero features. Ensure elements properly wrap and do not overflow cleanly.
