@@ -377,14 +377,13 @@
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 56px;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 24px;
             line-height: 1.15;
             color: var(--navy);
-            font-style: italic;
         }
 
         .hero h1 span {
@@ -392,7 +391,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-style: normal;
         }
 
         .hero-sub {
@@ -754,7 +752,8 @@
 
         /* === SECTION FOUNDATIONS === */
         .section-pad {
-            padding: 100px 0
+            padding: 100px 0;
+            position: relative;
         }
 
         .section-head {
@@ -793,6 +792,22 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px
+        }
+
+        .ind-container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .ind-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: sticky;
+            top: 100px;
+            background: var(--bg);
+            padding-bottom: 40px;
+            z-index: 20;
         }
 
         .why-card {
@@ -1519,7 +1534,7 @@
         <div class="container">
             <div class="hero-inner">
                 <!-- Left: Compelling copy targeting pain points -->
-                <div class="hero-copy">
+                <div class="hero-copy reveal">
                     <p class="hero-eyebrow">Scaling Simplicity. Automating Intelligence</p>
                     <h1>Still running your business on <span>manual workflows?</span></h1>
                     <p class="hero-sub">Most teams waste 20+ hours a week on tasks that should run themselves. We'll map
@@ -1548,7 +1563,7 @@
                     </div>
                 </div>
                 <!-- Right: Animated ROI stats card -->
-                <div class="hero-visual">
+                <div class="hero-visual reveal" style="transition-delay: 0.2s;">
                     <!-- Floating integration pills around the card -->
                     <div class="float-pill fp-1"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/240px-Slack_icon_2019.svg.png"
@@ -1665,6 +1680,13 @@
             height: 20px;
         }
 
+        .integrations-marquee h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
         /* specific icon fixes without external SVGs */
         .R-icon {
             font-family: 'Outfit', sans-serif;
@@ -1675,129 +1697,68 @@
         }
     </style>
 
-    <section class="integrations-marquee">
+    <section class="integrations-marquee reveal" style="padding-top: 60px; flex-direction: column;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2>We Handle the APIs. You Handle the Growth.</h2>
+        </div>
         <div class="marquee-wrapper-single">
             <!-- First Set -->
             <div class="marquee-content-single">
-                <div class="tool-chip"><img
-                        src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/n8n_logo_icon_82baff8e08.svg"
-                        alt="n8n"> n8n</div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M6 22 L6 10 L2 14" fill="none" stroke="#F7941D" stroke-width="3" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M14 22 L14 6 L10 10" fill="none" stroke="#57B947" stroke-width="3"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> HighLevel
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=128" alt="n8n"> n8n
                 </div>
-                <div class="tool-chip"><img src="https://cdn.worldvectorlogo.com/logos/zapier-1.svg" alt="Zapier">
-                    Zapier</div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M6 18 L12 12 L18 18" fill="none" stroke="#7B68EE" stroke-width="3"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M8 14 L12 9 L16 14" fill="none" stroke="#49CCF9" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> ClickUp
-                </div>
-                <div class="tool-chip"><img src="https://cdn.worldvectorlogo.com/logos/asana-1.svg" alt="Asana">
-                    Asana</div>
-                <div class="tool-chip"><img src="https://www.vectorlogo.zone/logos/monday/monday-icon.svg"
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=128"
+                        alt="HighLevel"> HighLevel</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128"
+                        alt="Zapier"> Zapier</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=clickup.com&sz=128"
+                        alt="ClickUp"> ClickUp</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=asana.com&sz=128"
+                        alt="Asana"> Asana</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=monday.com&sz=128"
                         alt="Monday.com"> Monday.com</div>
-                <div class="tool-chip"><img
-                        src="https://images.ctfassets.net/un655fb4n2ia/dfkm6F03N6a0OGqh3D4UX/bf8e0b75dd1b109b1f1acec15a17654e/Make_logo_icon.svg"
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=make.com&sz=128"
                         alt="Make.com"> Make.com</div>
-                <div class="tool-chip"><span class="R-icon">R</span> RelevanceAI</div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#00C853" />
-                        <path d="M8 12 L12 8 L16 12 M12 8 L12 18" stroke="#fff" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> Apify
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=relevanceai.com&sz=128"
+                        alt="RelevanceAI"> RelevanceAI</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=apify.com&sz=128"
+                        alt="Apify"> Apify</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=apollo.io&sz=128"
+                        alt="Apollo"> Apollo</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=fi.money&sz=128" alt="Fi"> Fi
                 </div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1B2B36" />
-                        <path d="M12 6 L6 16 L18 16 Z" fill="none" stroke="#fff" stroke-width="2"
-                            stroke-linejoin="round" />
-                    </svg> Apollo
-                </div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#00E8ED" />
-                    </svg> Fi
-                </div>
-                <div class="tool-chip"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/180px-OpenAI_Logo.svg.png"
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128"
                         alt="OpenAI"> OpenAI</div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <circle cx="10" cy="12" r="6" fill="#EA4B35" opacity="0.9" />
-                        <circle cx="10" cy="12" r="3" fill="#fff" />
-                        <path d="M16 12 H22" stroke="#EA4B35" stroke-width="2.5" stroke-linecap="round" />
-                    </svg> Webhook
-                </div>
+                <div class="tool-chip"><img src="https://webhook.site/favicon.ico" alt="Webhook"
+                        style="width:20px;height:20px;object-fit:contain;"> Webhook</div>
             </div>
             <!-- Duplicate Set for Infinite Scroll -->
             <div class="marquee-content-single" aria-hidden="true">
-                <div class="tool-chip"><img
-                        src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/n8n_logo_icon_82baff8e08.svg"
-                        alt="n8n"> n8n</div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M6 22 L6 10 L2 14" fill="none" stroke="#F7941D" stroke-width="3" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M14 22 L14 6 L10 10" fill="none" stroke="#57B947" stroke-width="3"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> HighLevel
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=128" alt="n8n"> n8n
                 </div>
-                <div class="tool-chip"><img src="https://cdn.worldvectorlogo.com/logos/zapier-1.svg" alt="Zapier">
-                    Zapier</div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M6 18 L12 12 L18 18" fill="none" stroke="#7B68EE" stroke-width="3"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M8 14 L12 9 L16 14" fill="none" stroke="#49CCF9" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> ClickUp
-                </div>
-                <div class="tool-chip"><img src="https://cdn.worldvectorlogo.com/logos/asana-1.svg" alt="Asana">
-                    Asana</div>
-                <div class="tool-chip"><img src="https://www.vectorlogo.zone/logos/monday/monday-icon.svg"
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=gohighlevel.com&sz=128"
+                        alt="HighLevel"> HighLevel</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128"
+                        alt="Zapier"> Zapier</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=clickup.com&sz=128"
+                        alt="ClickUp"> ClickUp</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=asana.com&sz=128"
+                        alt="Asana"> Asana</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=monday.com&sz=128"
                         alt="Monday.com"> Monday.com</div>
-                <div class="tool-chip"><img
-                        src="https://images.ctfassets.net/un655fb4n2ia/dfkm6F03N6a0OGqh3D4UX/bf8e0b75dd1b109b1f1acec15a17654e/Make_logo_icon.svg"
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=make.com&sz=128"
                         alt="Make.com"> Make.com</div>
-                <div class="tool-chip"><span class="R-icon">R</span> RelevanceAI</div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#00C853" />
-                        <path d="M8 12 L12 8 L16 12 M12 8 L12 18" stroke="#fff" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> Apify
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=relevanceai.com&sz=128"
+                        alt="RelevanceAI"> RelevanceAI</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=apify.com&sz=128"
+                        alt="Apify"> Apify</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=apollo.io&sz=128"
+                        alt="Apollo"> Apollo</div>
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=fi.money&sz=128" alt="Fi"> Fi
                 </div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1B2B36" />
-                        <path d="M12 6 L6 16 L18 16 Z" fill="none" stroke="#fff" stroke-width="2"
-                            stroke-linejoin="round" />
-                    </svg> Apollo
-                </div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#00E8ED" />
-                    </svg> Fi
-                </div>
-                <div class="tool-chip"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/180px-OpenAI_Logo.svg.png"
+                <div class="tool-chip"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128"
                         alt="OpenAI"> OpenAI</div>
-                <div class="tool-chip">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <circle cx="10" cy="12" r="6" fill="#EA4B35" opacity="0.9" />
-                        <circle cx="10" cy="12" r="3" fill="#fff" />
-                        <path d="M16 12 H22" stroke="#EA4B35" stroke-width="2.5" stroke-linecap="round" />
-                    </svg> Webhook
-                </div>
+                <div class="tool-chip"><img src="https://webhook.site/favicon.ico" alt="Webhook"
+                        style="width:20px;height:20px;object-fit:contain;"> Webhook</div>
             </div>
         </div>
     </section>
@@ -1900,85 +1861,87 @@
                 <h2>Automation for your industry</h2>
                 <p>Targeted service packages built from real market demand analysis across 10+ industries.</p>
             </div>
-            <div class="ind-grid">
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#E14F37"></div>
-                    <div>
-                        <h3>HR &amp; Recruitment</h3>
-                        <p>Resume screening, onboarding workflows, payroll distribution.</p><a
-                            href="industries/hr-recruitment.html" class="ind-link">View services →</a>
+            <div class="ind-container">
+                <div class="ind-grid">
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#E14F37"></div>
+                        <div>
+                            <h3>HR &amp; Recruitment</h3>
+                            <p>Resume screening, onboarding workflows, payroll distribution.</p><a
+                                href="industries/hr-recruitment.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#2563EB"></div>
-                    <div>
-                        <h3>Tech &amp; IT</h3>
-                        <p>CI/CD pipelines, monitoring alerts, helpdesk automation.</p><a href="industries/tech-it.html"
-                            class="ind-link">View services →</a>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#2563EB"></div>
+                        <div>
+                            <h3>Tech &amp; IT</h3>
+                            <p>CI/CD pipelines, monitoring alerts, helpdesk automation.</p><a
+                                href="industries/tech-it.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#E11D48"></div>
-                    <div>
-                        <h3>Marketing &amp; Growth</h3>
-                        <p>Lead nurture, social scheduling, reporting dashboards.</p><a
-                            href="industries/marketing-growth.html" class="ind-link">View services →</a>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#E11D48"></div>
+                        <div>
+                            <h3>Marketing &amp; Growth</h3>
+                            <p>Lead nurture, social scheduling, reporting dashboards.</p><a
+                                href="industries/marketing-growth.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#D97706"></div>
-                    <div>
-                        <h3>Finance &amp; Accounting</h3>
-                        <p>Invoice processing, bank reconciliation, expense automation.</p><a
-                            href="industries/finance-accounting.html" class="ind-link">View services →</a>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#D97706"></div>
+                        <div>
+                            <h3>Finance &amp; Accounting</h3>
+                            <p>Invoice processing, bank reconciliation, expense automation.</p><a
+                                href="industries/finance-accounting.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#4338CA"></div>
-                    <div>
-                        <h3>Legal</h3>
-                        <p>Contract review, deadline tracking, client intake automation.</p><a
-                            href="industries/legal.html" class="ind-link">View services →</a>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#4338CA"></div>
+                        <div>
+                            <h3>Legal</h3>
+                            <p>Contract review, deadline tracking, client intake automation.</p><a
+                                href="industries/legal.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#EA580C"></div>
-                    <div>
-                        <h3>Construction</h3>
-                        <p>Project tracking, permit filing, subcontractor coordination.</p><a
-                            href="industries/construction.html" class="ind-link">View services →</a>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#EA580C"></div>
+                        <div>
+                            <h3>Construction</h3>
+                            <p>Project tracking, permit filing, subcontractor coordination.</p><a
+                                href="industries/construction.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#0D9488"></div>
-                    <div>
-                        <h3>Electrical &amp; Trades</h3>
-                        <p>Job quoting, dispatch scheduling, digital job cards.</p><a
-                            href="industries/electrical-trades.html" class="ind-link">View services →</a>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#0D9488"></div>
+                        <div>
+                            <h3>Electrical &amp; Trades</h3>
+                            <p>Job quoting, dispatch scheduling, digital job cards.</p><a
+                                href="industries/electrical-trades.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#0891B2"></div>
-                    <div>
-                        <h3>Healthcare</h3>
-                        <p>Appointment reminders, patient intake, billing automation.</p><a
-                            href="industries/healthcare.html" class="ind-link">View services →</a>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#0891B2"></div>
+                        <div>
+                            <h3>Healthcare</h3>
+                            <p>Appointment reminders, patient intake, billing automation.</p><a
+                                href="industries/healthcare.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#059669"></div>
-                    <div>
-                        <h3>eCommerce</h3>
-                        <p>Order management, inventory sync, abandoned cart recovery.</p><a
-                            href="industries/ecommerce.html" class="ind-link">View services →</a>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#059669"></div>
+                        <div>
+                            <h3>eCommerce</h3>
+                            <p>Order management, inventory sync, abandoned cart recovery.</p><a
+                                href="industries/ecommerce.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#032E42"></div>
-                    <div>
-                        <h3>Real Estate</h3>
-                        <p>Lead follow-up, listing syndication, transaction management.</p><a
-                            href="industries/real-estate.html" class="ind-link">View services →</a>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#032E42"></div>
+                        <div>
+                            <h3>Real Estate</h3>
+                            <p>Lead follow-up, listing syndication, transaction management.</p><a
+                                href="industries/real-estate.html" class="ind-link">View services →</a>
+                        </div>
                     </div>
                 </div>
             </div>
