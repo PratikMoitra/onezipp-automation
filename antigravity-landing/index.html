@@ -377,19 +377,22 @@
         }
 
         .hero h1 {
-            font-size: 48px;
-            font-weight: 900;
-            letter-spacing: -1.5px;
-            margin-bottom: 18px;
-            line-height: 1.1;
-            color: var(--navy)
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            line-height: 1.15;
+            color: var(--navy);
+            font-style: italic;
         }
 
         .hero h1 span {
             background: linear-gradient(135deg, var(--red), #ff8c69);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text
+            background-clip: text;
+            font-style: normal;
         }
 
         .hero-sub {
@@ -1814,654 +1817,681 @@
         </div>
         </section>
 
-        <!-- === INDUSTRIES WE SERVE === -->
-        <section id="industries" class="industries">
+        <!-- === AUTOMATION TOOLKIT MARQUEE === -->
+        <style>
+            .integrations-marquee {
+                padding: 40px 0;
+                background: var(--surface-alt);
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+                overflow: hidden;
+                display: flex;
+            }
+
+            .marquee-wrapper-single {
+                position: relative;
+                display: flex;
+                overflow: hidden;
+                user-select: none;
+                gap: 20px;
+                mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+                -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+                width: 100%;
+            }
+
+            .marquee-content-single {
+                display: flex;
+                flex-shrink: 0;
+                gap: 20px;
+                min-width: 100%;
+                animation: scroll-left-fast 40s linear infinite;
+            }
+
+            .marquee-wrapper-single:hover .marquee-content-single {
+                animation-play-state: paused;
+            }
+
+            @keyframes scroll-left-fast {
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(calc(-100% - 20px));
+                }
+            }
+
+            .tool-chip {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 12px 24px;
+                background: #ffffff;
+                border: 1px solid var(--border);
+                border-radius: 999px;
+                font-family: 'Outfit', sans-serif;
+                font-size: 15px;
+                font-weight: 600;
+                color: var(--text);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+                transition: all 0.3s ease;
+                white-space: nowrap;
+            }
+
+            .tool-chip:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+                border-color: rgba(225, 79, 55, 0.4);
+            }
+
+            .tool-chip img {
+                width: 20px;
+                height: 20px;
+                object-fit: contain;
+            }
+
+            .tool-chip svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            /* specific icon fixes without external SVGs */
+            .R-icon {
+                font-family: 'Outfit', sans-serif;
+                font-weight: 800;
+                font-size: 18px;
+                color: #2563EB;
+                margin-right: -4px;
+            }
+        </style>
+
+        <section class="integrations-marquee">
+            <div class="marquee-wrapper-single">
+                <!-- First Set -->
+                <div class="marquee-content-single">
+                    <div class="tool-chip"><img
+                            src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/n8n_logo_icon_82baff8e08.svg"
+                            alt="n8n"> n8n</div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M6 22 L6 10 L2 14" fill="none" stroke="#F7941D" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 22 L14 6 L10 10" fill="none" stroke="#57B947" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> HighLevel
+                    </div>
+                    <div class="tool-chip"><img src="https://cdn.worldvectorlogo.com/logos/zapier-1.svg" alt="Zapier">
+                        Zapier</div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M6 18 L12 12 L18 18" fill="none" stroke="#7B68EE" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 14 L12 9 L16 14" fill="none" stroke="#49CCF9" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> ClickUp
+                    </div>
+                    <div class="tool-chip"><img src="https://cdn.worldvectorlogo.com/logos/asana-1.svg" alt="Asana">
+                        Asana</div>
+                    <div class="tool-chip"><img src="https://www.vectorlogo.zone/logos/monday/monday-icon.svg"
+                            alt="Monday.com"> Monday.com</div>
+                    <div class="tool-chip"><img
+                            src="https://images.ctfassets.net/un655fb4n2ia/dfkm6F03N6a0OGqh3D4UX/bf8e0b75dd1b109b1f1acec15a17654e/Make_logo_icon.svg"
+                            alt="Make.com"> Make.com</div>
+                    <div class="tool-chip"><span class="R-icon">R</span> RelevanceAI</div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="12" fill="#00C853" />
+                            <path d="M8 12 L12 8 L16 12 M12 8 L12 18" stroke="#fff" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> Apify
+                    </div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="12" fill="#1B2B36" />
+                            <path d="M12 6 L6 16 L18 16 Z" fill="none" stroke="#fff" stroke-width="2"
+                                stroke-linejoin="round" />
+                        </svg> Apollo
+                    </div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="12" fill="#00E8ED" />
+                        </svg> Fi
+                    </div>
+                    <div class="tool-chip"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/180px-OpenAI_Logo.svg.png"
+                            alt="OpenAI"> OpenAI</div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="10" cy="12" r="6" fill="#EA4B35" opacity="0.9" />
+                            <circle cx="10" cy="12" r="3" fill="#fff" />
+                            <path d="M16 12 H22" stroke="#EA4B35" stroke-width="2.5" stroke-linecap="round" />
+                        </svg> Webhook
+                    </div>
+                </div>
+                <!-- Duplicate Set for Infinite Scroll -->
+                <div class="marquee-content-single" aria-hidden="true">
+                    <div class="tool-chip"><img
+                            src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/n8n_logo_icon_82baff8e08.svg"
+                            alt="n8n"> n8n</div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M6 22 L6 10 L2 14" fill="none" stroke="#F7941D" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 22 L14 6 L10 10" fill="none" stroke="#57B947" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> HighLevel
+                    </div>
+                    <div class="tool-chip"><img src="https://cdn.worldvectorlogo.com/logos/zapier-1.svg" alt="Zapier">
+                        Zapier</div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M6 18 L12 12 L18 18" fill="none" stroke="#7B68EE" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 14 L12 9 L16 14" fill="none" stroke="#49CCF9" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> ClickUp
+                    </div>
+                    <div class="tool-chip"><img src="https://cdn.worldvectorlogo.com/logos/asana-1.svg" alt="Asana">
+                        Asana</div>
+                    <div class="tool-chip"><img src="https://www.vectorlogo.zone/logos/monday/monday-icon.svg"
+                            alt="Monday.com"> Monday.com</div>
+                    <div class="tool-chip"><img
+                            src="https://images.ctfassets.net/un655fb4n2ia/dfkm6F03N6a0OGqh3D4UX/bf8e0b75dd1b109b1f1acec15a17654e/Make_logo_icon.svg"
+                            alt="Make.com"> Make.com</div>
+                    <div class="tool-chip"><span class="R-icon">R</span> RelevanceAI</div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="12" fill="#00C853" />
+                            <path d="M8 12 L12 8 L16 12 M12 8 L12 18" stroke="#fff" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> Apify
+                    </div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="12" fill="#1B2B36" />
+                            <path d="M12 6 L6 16 L18 16 Z" fill="none" stroke="#fff" stroke-width="2"
+                                stroke-linejoin="round" />
+                        </svg> Apollo
+                    </div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="12" fill="#00E8ED" />
+                        </svg> Fi
+                    </div>
+                    <div class="tool-chip"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/180px-OpenAI_Logo.svg.png"
+                            alt="OpenAI"> OpenAI</div>
+                    <div class="tool-chip">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="10" cy="12" r="6" fill="#EA4B35" opacity="0.9" />
+                            <circle cx="10" cy="12" r="3" fill="#fff" />
+                            <path d="M16 12 H22" stroke="#EA4B35" stroke-width="2.5" stroke-linecap="round" />
+                        </svg> Webhook
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === WHY ONEZIPP === -->
+        <section class="why-section section-pad" id="why">
             <div class="container">
-                <div class="section-badge">Niches</div>
-                <h2>Specialized Automation by Industry</h2>
-                <p style="text-align:center; max-width:600px; margin:0 auto 48px; color:var(--text-sub);">
-                    We map and automate operations for high-velocity teams. If your business depends on rapid follow-up
-                    and zero-error fulfillment, we build the engine for it.
-                </p>
+                <div class="section-head">
+                    <div class="accent-line"></div>
+                    <h2>Why Onezipp?</h2>
+                    <p>We're new, and that's our superpower. No bureaucracy. No ticket queues. Just fast, flexible
+                        automation delivery backed by 25+ years of enterprise experience.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card reveal">
+                        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="#E14F37" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg></div>
+                        <h3>Live in 14 Days</h3>
+                        <p>We move at startup speed. Most automations are designed, built, tested and deployed within 2
+                            weeks — no excuses, no scope creep.</p>
+                    </div>
+                    <div class="why-card reveal">
+                        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="#E14F37" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg></div>
+                        <h3>Zero Lock-in</h3>
+                        <p>You own everything — every workflow, every line of logic, every integration. Full
+                            documentation
+                            and handover. Walk away any time.</p>
+                    </div>
+                    <div class="why-card reveal">
+                        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="#E14F37" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg></div>
+                        <h3>Prompt Response</h3>
+                        <p>We work within agreed timelines — guaranteed. Transparent communication, same-day replies,
+                            and a
+                            standard of care that large agencies can't match.</p>
+                    </div>
+                    <div class="why-card reveal">
+                        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="#E14F37" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg></div>
+                        <h3>Flexible to Work With</h3>
+                        <p>As a boutique agency, we adapt to your workflow, not the other way around. Need changes
+                            mid-sprint? No problem. We're built for agility.</p>
+                    </div>
+                    <div class="why-card reveal">
+                        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="#E14F37" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg></div>
+                        <h3>Enterprise DNA</h3>
+                        <p>Our founder has delivered secure, robust architectures for global enterprises and Fortune 500
+                            organizations. You get Fortune 500 rigour at boutique pricing.</p>
+                    </div>
+                    <div class="why-card reveal">
+                        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="#E14F37" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <path d="M9 12l2 2 4-4" />
+                            </svg></div>
+                        <h3>Security-First Mindset</h3>
+                        <p>With CCSP, CCIE, and cybersecurity certifications, security isn't an afterthought — it's
+                            baked
+                            into every automation we build.</p>
+                    </div>
+                </div>
+
+                <!-- Founder Teaser -->
+                <div class="founder-teaser">
+                    <div class="founder-photo"><img src="pratik-profile-new.jpg" alt="Pratik Moitra"></div>
+                    <div class="founder-meta">
+                        <h4>Meet Pratik</h4>
+                        <div class="subtitle">Founder of Onezipp</div>
+                        <p>25+ years designing and securing enterprise architectures globally. CCIE, CCSP, AWS
+                            certified.
+                            MBA in IT. Pratik brings Fortune 500 discipline to every automation delivery.</p>
+                        <a href="founder.html" class="founder-link">Meet the Founder →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === INDUSTRIES === -->
+        <section class="industries section-pad" id="services">
+            <div class="container">
+                <div class="section-head">
+                    <div class="accent-line"></div>
+                    <h2>Automation for your industry</h2>
+                    <p>Targeted service packages built from real market demand analysis across 10+ industries.</p>
+                </div>
                 <div class="ind-grid">
-                    <!-- eCommerce -->
-                    <div class="ind-card">
-                        <div class="ind-bar" style="background:#8b5cf6"></div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#E14F37"></div>
                         <div>
-                            <h3>eCommerce & DTC</h3>
-                            <p>Abandoned cart sequences, post-purchase nurturing, inventory sync, and customer support
-                                ticket routing.</p>
-                            <span class="ind-link">Optimize Stores →</span>
+                            <h3>HR &amp; Recruitment</h3>
+                            <p>Resume screening, onboarding workflows, payroll distribution.</p><a
+                                href="industries/hr-recruitment.html" class="ind-link">View services →</a>
                         </div>
                     </div>
-                    <!-- Real Estate -->
-                    <div class="ind-card">
-                        <div class="ind-bar" style="background:#3b82f6"></div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#2563EB"></div>
+                        <div>
+                            <h3>Tech &amp; IT</h3>
+                            <p>CI/CD pipelines, monitoring alerts, helpdesk automation.</p><a
+                                href="industries/tech-it.html" class="ind-link">View services →</a>
+                        </div>
+                    </div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#E11D48"></div>
+                        <div>
+                            <h3>Marketing &amp; Growth</h3>
+                            <p>Lead nurture, social scheduling, reporting dashboards.</p><a
+                                href="industries/marketing-growth.html" class="ind-link">View services →</a>
+                        </div>
+                    </div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#D97706"></div>
+                        <div>
+                            <h3>Finance &amp; Accounting</h3>
+                            <p>Invoice processing, bank reconciliation, expense automation.</p><a
+                                href="industries/finance-accounting.html" class="ind-link">View services →</a>
+                        </div>
+                    </div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#4338CA"></div>
+                        <div>
+                            <h3>Legal</h3>
+                            <p>Contract review, deadline tracking, client intake automation.</p><a
+                                href="industries/legal.html" class="ind-link">View services →</a>
+                        </div>
+                    </div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#EA580C"></div>
+                        <div>
+                            <h3>Construction</h3>
+                            <p>Project tracking, permit filing, subcontractor coordination.</p><a
+                                href="industries/construction.html" class="ind-link">View services →</a>
+                        </div>
+                    </div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#0D9488"></div>
+                        <div>
+                            <h3>Electrical &amp; Trades</h3>
+                            <p>Job quoting, dispatch scheduling, digital job cards.</p><a
+                                href="industries/electrical-trades.html" class="ind-link">View services →</a>
+                        </div>
+                    </div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#0891B2"></div>
+                        <div>
+                            <h3>Healthcare</h3>
+                            <p>Appointment reminders, patient intake, billing automation.</p><a
+                                href="industries/healthcare.html" class="ind-link">View services →</a>
+                        </div>
+                    </div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#059669"></div>
+                        <div>
+                            <h3>eCommerce</h3>
+                            <p>Order management, inventory sync, abandoned cart recovery.</p><a
+                                href="industries/ecommerce.html" class="ind-link">View services →</a>
+                        </div>
+                    </div>
+                    <div class="ind-card reveal">
+                        <div class="ind-bar" style="background:#032E42"></div>
                         <div>
                             <h3>Real Estate</h3>
-                            <p>Lead aggregation, instant SMS follow-ups, automated showing scheduling, and pipeline
-                                management.</p>
-                            <span class="ind-link">Accelerate Close →</span>
-                        </div>
-                    </div>
-                    <!-- Agencies -->
-                    <div class="ind-card">
-                        <div class="ind-bar" style="background:#ef4444"></div>
-                        <div>
-                            <h3>Marketing Agencies</h3>
-                            <p>Client onboarding flows, automated reporting dashboards, and cross-platform campaign
-                                tracking.</p>
-                            <span class="ind-link">Scale Delivery →</span>
-                        </div>
-                    </div>
-                    <!-- SaaS -->
-                    <div class="ind-card">
-                        <div class="ind-bar" style="background:#10b981"></div>
-                        <div>
-                            <h3>SaaS & Tech</h3>
-                            <p>User trial activation sequences, churn prediction alerts, and seamless CRM to billing
-                                syncs.</p>
-                            <span class="ind-link">Boost Retention →</span>
+                            <p>Lead follow-up, listing syndication, transaction management.</p><a
+                                href="industries/real-estate.html" class="ind-link">View services →</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- === SERVICES === -->
-        <g>
-            <rect x="365" y="197" width="120" height="72" rx="10" fill="none" stroke="rgba(225,79,55,.2)"
-                stroke-width="1.5">
-                <animate attributeName="opacity" values=".4;1;.4" dur="3s" repeatCount="indefinite" />
-            </rect>
-            <rect x="370" y="200" width="110" height="66" rx="8" fill="#fff" filter="url(#cpush)" />
-            <rect x="370" y="200" width="110" height="66" rx="8" fill="none" stroke="var(--red)" stroke-width=".8"
-                opacity=".3" />
-            <g fill="url(#pg)">
-                <rect x="395" y="192" width="8" height="10" rx="2" />
-                <rect x="420" y="192" width="8" height="10" rx="2" />
-                <rect x="445" y="192" width="8" height="10" rx="2" />
-                <rect x="395" y="264" width="8" height="10" rx="2" />
-                <rect x="420" y="264" width="8" height="10" rx="2" />
-                <rect x="445" y="264" width="8" height="10" rx="2" />
-                <rect x="362" y="218" width="10" height="8" rx="2" />
-                <rect x="362" y="238" width="10" height="8" rx="2" />
-                <rect x="478" y="218" width="10" height="8" rx="2" />
-                <rect x="478" y="238" width="10" height="8" rx="2" />
-            </g>
-            <image href="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" x="385" y="215" width="80"
-                height="20" />
-            <text x="425" y="252" text-anchor="middle" font-family="Outfit" font-size="6.5" font-weight="700"
-                fill="#94a3b8" letter-spacing="1.2">SIMPLIFYING AUTOMATION</text>
-        </g>
-        <defs>
-            <mask id="m1">
-                <path d="M 50 60 h 310 q 20 0 20 20 v 130" stroke-width="2" stroke="white" fill="none" />
-            </mask>
-            <mask id="m2">
-                <path d="M 750 40 h -290 q -20 0 -20 20 v 150" stroke-width="2" stroke="white" fill="none" />
-            </mask>
-            <mask id="m3">
-                <path d="M 550 50 v 110 q 0 20 -20 20 h -80" stroke-width="2" stroke="white" fill="none" />
-            </mask>
-            <mask id="m4">
-                <path d="M 700 350 v -100 q 0 -20 -20 -20 h -220" stroke-width="2" stroke="white" fill="none" />
-            </mask>
-            <mask id="m5">
-                <path d="M 570 280 h 50 q 20 0 20 20 v 30 q 0 20 -20 20 h -140 q -20 0 -20 -20 v -110" stroke-width="2"
-                    stroke="white" fill="none" />
-            </mask>
-            <mask id="m6">
-                <path d="M 420 410 v -180" stroke-width="2" stroke="white" fill="none" />
-            </mask>
-            <mask id="m7">
-                <path d="M 330 390 v -70 q 0 -20 -20 -20 h -30 q -20 0 -20 -20 v -20 q 0 -20 20 -20 h 100"
-                    stroke-width="2" stroke="white" fill="none" />
-            </mask>
-            <mask id="m8">
-                <path d="M 120 120 h 90 q 20 0 20 20 v 30 q 0 20 20 20 h 110" stroke-width="2" stroke="white"
-                    fill="none" />
-            </mask>
-            <mask id="m9">
-                <path d="M 200 410 h 70 q 20 0 20 -20 v -70 q 0 -20 20 -20 h 60" stroke-width="2" stroke="white"
-                    fill="none" />
-            </mask>
-            <mask id="m10">
-                <path d="M 780 190 h -110 q -20 0 -20 20 v 20" stroke-width="2" stroke="white" fill="none" />
-            </mask>
-            <mask id="m11">
-                <path d="M 100 310 h 130 q 20 0 20 -20 v -30 q 0 -20 20 -20 h 90" stroke-width="2" stroke="white"
-                    fill="none" />
-            </mask>
-            <mask id="m12">
-                <path d="M 740 115 h -200 q -20 0 -20 20 v 60 q 0 20 -20 20 h -50" stroke-width="2" stroke="white"
-                    fill="none" />
-            </mask>
-            <radialGradient id="g-blue" fx="1">
-                <stop offset="0%" stop-color="#00E8ED" />
-                <stop offset="50%" stop-color="#08F" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-yellow" fx="1">
-                <stop offset="0%" stop-color="#FFD800" />
-                <stop offset="50%" stop-color="#FFD800" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-pink" fx="1">
-                <stop offset="0%" stop-color="#830CD1" />
-                <stop offset="50%" stop-color="#FF008B" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-white" fx="1">
-                <stop offset="0%" stop-color="#94a3b8" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-green" fx="1">
-                <stop offset="0%" stop-color="#22c55e" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-orange" fx="1">
-                <stop offset="0%" stop-color="#f97316" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-cyan" fx="1">
-                <stop offset="0%" stop-color="#06b6d4" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-rose" fx="1">
-                <stop offset="0%" stop-color="#f43f5e" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-purple" fx="1">
-                <stop offset="0%" stop-color="#9333EA" />
-                <stop offset="50%" stop-color="#7C3AED" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-mag" fx="1">
-                <stop offset="0%" stop-color="#2563eb" />
-                <stop offset="50%" stop-color="#3b82f6" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-n8n" fx="1">
-                <stop offset="0%" stop-color="#EA4B35" />
-                <stop offset="50%" stop-color="#FF6B4A" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <radialGradient id="g-clickup" fx="1">
-                <stop offset="0%" stop-color="#7B68EE" />
-                <stop offset="50%" stop-color="#49CCF9" />
-                <stop offset="100%" stop-color="transparent" />
-            </radialGradient>
-            <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#cbd5e1" />
-                <stop offset="100%" stop-color="#94a3b8" />
-            </linearGradient>
-            <filter id="cpush" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="2" stdDeviation="8" flood-color="#E14F37" flood-opacity=".08" />
-                <feDropShadow dx="1" dy="1" stdDeviation="3" flood-color="#000" flood-opacity=".06" />
-            </filter>
-            <filter id="cs" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity=".06" />
-            </filter>
-            <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="16" markerHeight="16">
-                <circle cx="5" cy="5" r="2" fill="#e2e8f0" stroke="#cbd5e1" stroke-width=".5">
-                    <animate attributeName="r" values="0;3;2" dur=".5s" />
-                </circle>
-            </marker>
-        </defs>
-        </svg>
-    </div>
-    </div>
-
-    <!-- === WHY ONEZIPP === -->
-    <section class="why-section section-pad" id="why">
-        <div class="container">
-            <div class="section-head">
-                <div class="accent-line"></div>
-                <h2>Why Onezipp?</h2>
-                <p>We're new, and that's our superpower. No bureaucracy. No ticket queues. Just fast, flexible
-                    automation delivery backed by 25+ years of enterprise experience.</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-card reveal">
-                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E14F37"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                        </svg></div>
-                    <h3>Live in 14 Days</h3>
-                    <p>We move at startup speed. Most automations are designed, built, tested and deployed within 2
-                        weeks — no excuses, no scope creep.</p>
+        <!-- === PROCESS === -->
+        <section class="process section-pad" id="process">
+            <div class="container">
+                <div class="section-head">
+                    <div class="accent-line"></div>
+                    <h2>From first call to live automation in 14 days</h2>
                 </div>
-                <div class="why-card reveal">
-                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E14F37"
-                            stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg></div>
-                    <h3>Zero Lock-in</h3>
-                    <p>You own everything — every workflow, every line of logic, every integration. Full documentation
-                        and handover. Walk away any time.</p>
-                </div>
-                <div class="why-card reveal">
-                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E14F37"
-                            stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                        </svg></div>
-                    <h3>Prompt Response</h3>
-                    <p>We work within agreed timelines — guaranteed. Transparent communication, same-day replies, and a
-                        standard of care that large agencies can't match.</p>
-                </div>
-                <div class="why-card reveal">
-                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E14F37"
-                            stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg></div>
-                    <h3>Flexible to Work With</h3>
-                    <p>As a boutique agency, we adapt to your workflow, not the other way around. Need changes
-                        mid-sprint? No problem. We're built for agility.</p>
-                </div>
-                <div class="why-card reveal">
-                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E14F37"
-                            stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg></div>
-                    <h3>Enterprise DNA</h3>
-                    <p>Our founder has delivered secure, robust architectures for global enterprises and Fortune 500
-                        organizations. You get Fortune 500 rigour at boutique pricing.</p>
-                </div>
-                <div class="why-card reveal">
-                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E14F37"
-                            stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            <path d="M9 12l2 2 4-4" />
-                        </svg></div>
-                    <h3>Security-First Mindset</h3>
-                    <p>With CCSP, CCIE, and cybersecurity certifications, security isn't an afterthought — it's baked
-                        into every automation we build.</p>
+                <div class="timeline">
+                    <div class="step reveal">
+                        <div class="step-num">1</div>
+                        <h3>Discover</h3>
+                        <p>Free 30-min call to map your workflows and identify the highest-impact automations.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="step-num">2</div>
+                        <h3>Design</h3>
+                        <p>Detailed blueprint with workflow diagrams and tool recommendations.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="step-num">3</div>
+                        <h3>Build</h3>
+                        <p>We build, test, and iterate using n8n, Make, or Zapier — whichever fits your stack.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="step-num">4</div>
+                        <h3>Deploy</h3>
+                        <p>Go live with 30 days of free support. Your automation runs 24/7.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Founder Teaser -->
-            <div class="founder-teaser">
-                <div class="founder-photo"><img src="pratik-profile-new.jpg" alt="Pratik Moitra"></div>
-                <div class="founder-meta">
-                    <h4>Meet Pratik</h4>
-                    <div class="subtitle">Founder of Onezipp</div>
-                    <p>25+ years designing and securing enterprise architectures globally. CCIE, CCSP, AWS certified.
-                        MBA in IT. Pratik brings Fortune 500 discipline to every automation delivery.</p>
-                    <a href="founder.html" class="founder-link">Meet the Founder →</a>
+        <!-- === CTA === -->
+        <section class="cta section-pad" id="contact">
+            <div class="container">
+                <h2>Ready to simplify your workflows?</h2>
+                <p>Book a free 45-minute discovery call. We'll map your processes and show you exactly what we'd
+                    automate.
+                </p>
+                <button class="btn-cta" onclick="openCal()">Schedule a Call</button>
+            </div>
+        </section>
+
+        <!-- === FAQ === -->
+        <section class="faq section-pad" id="faq">
+            <div class="container">
+                <div class="section-head">
+                    <div class="accent-line"></div>
+                    <h2>Frequently Asked Questions</h2>
                 </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-q">What does Onezipp do?<svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg></button>
+                        <div class="faq-a">
+                            <p>Onezipp helps businesses connect platforms, automate processes, and reduce manual
+                                workloads
+                                with AI-powered automation. We build secure, scalable, and customisable solutions
+                                tailored
+                                to your business needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Do you offer a free trial?<svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg></button>
+                        <div class="faq-a">
+                            <p>Yes! We provide a complimentary 3-day trial once your project is approved so you can
+                                experience our automation systems with zero cost or risk.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Is my data secure with Onezipp?<svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg></button>
+                        <div class="faq-a">
+                            <p>Absolutely. Our infrastructure is built with enterprise-grade security and compliance,
+                                including SOC-2, ISO, and GDPR standards, to keep your data safe.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Can Onezipp's automation be customised for my business?<svg width="18"
+                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg></button>
+                        <div class="faq-a">
+                            <p>Yes. We specialise in custom AI agent engineering and tailored automation pipelines
+                                designed
+                                around your goals, workflows, and industry requirements.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">What kind of support do you provide?<svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg></button>
+                        <div class="faq-a">
+                            <p>We offer end-to-end support — from onboarding and setup to ongoing optimisation. Our team
+                                ensures your automation runs smoothly and scales as your business grows.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">How quickly can I get started?<svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg></button>
+                        <div class="faq-a">
+                            <p>Our onboarding is simple. Once we collect the required information, we can begin building
+                                and
+                                deploying your automation systems within 14 days.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Do you offer a money-back guarantee?<svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg></button>
+                        <div class="faq-a">
+                            <p>Yes. If you're not satisfied with our solutions, we provide unlimited revisions on design
+                                work and a money-back guarantee for peace of mind.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Who can benefit from Onezipp's automation?<svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg></button>
+                        <div class="faq-a">
+                            <p>Any modern business — whether a startup, small business, or enterprise — that wants to
+                                save
+                                time, reduce costs, and scale operations with intelligent automation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === FOOTER === -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <img src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="Onezipp">
+                        <p>Custom workflow automation powered by n8n, Claude AI, Make.com & GoHighLevel.
+                            Enterprise-grade
+                            security. Live in 2 weeks.</p>
+                        <div class="footer-social">
+                            <a href="https://www.linkedin.com/company/onezipp-norge-as/" target="_blank"
+                                aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect x="2" y="9" width="4" height="12" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg></a>
+                            <a href="mailto:Connect@onezipp.com" aria-label="Email"><svg width="16" height="16"
+                                    viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="industries/hr-recruitment.html">HR & Recruitment</a></li>
+                            <li><a href="industries/tech-it.html">Tech & IT</a></li>
+                            <li><a href="industries/marketing-growth.html">Marketing & Growth</a></li>
+                            <li><a href="industries/finance-accounting.html">Finance & Accounting</a></li>
+                            <li><a href="industries/healthcare.html">Healthcare</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>More Industries</h4>
+                        <ul>
+                            <li><a href="industries/legal.html">Legal</a></li>
+                            <li><a href="industries/construction.html">Construction</a></li>
+                            <li><a href="industries/electrical-trades.html">Electrical & Trades</a></li>
+                            <li><a href="industries/ecommerce.html">eCommerce</a></li>
+                            <li><a href="industries/real-estate.html">Real Estate</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#why">Why Onezipp?</a></li>
+                            <li><a href="#process">Our Process</a></li>
+                            <li><a href="founder.html">Meet the Founder</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="mailto:Connect@onezipp.com">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span class="footer-copy">© 2026 Onezipp Norge AS. All rights reserved.</span>
+                    <div class="footer-legal">
+                        <a href="mailto:Connect@onezipp.com">Connect@onezipp.com</a>
+                        <a href="tel:+19109940870">+1 (910) 994-0870</a>
+                        <a href="tel:+447447193940">+44 74 4719 3940</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- === CAL MODAL === -->
+        <div id="cal-modal" onclick="closeCal(event)">
+            <div class="modal-box" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeCal()">✕</button>
+                <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-45min"></div>
             </div>
         </div>
-    </section>
 
-    <!-- === INDUSTRIES === -->
-    <section class="industries section-pad" id="services">
-        <div class="container">
-            <div class="section-head">
-                <div class="accent-line"></div>
-                <h2>Automation for your industry</h2>
-                <p>Targeted service packages built from real market demand analysis across 10+ industries.</p>
-            </div>
-            <div class="ind-grid">
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#E14F37"></div>
-                    <div>
-                        <h3>HR &amp; Recruitment</h3>
-                        <p>Resume screening, onboarding workflows, payroll distribution.</p><a
-                            href="industries/hr-recruitment.html" class="ind-link">View services →</a>
-                    </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#2563EB"></div>
-                    <div>
-                        <h3>Tech &amp; IT</h3>
-                        <p>CI/CD pipelines, monitoring alerts, helpdesk automation.</p><a href="industries/tech-it.html"
-                            class="ind-link">View services →</a>
-                    </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#E11D48"></div>
-                    <div>
-                        <h3>Marketing &amp; Growth</h3>
-                        <p>Lead nurture, social scheduling, reporting dashboards.</p><a
-                            href="industries/marketing-growth.html" class="ind-link">View services →</a>
-                    </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#D97706"></div>
-                    <div>
-                        <h3>Finance &amp; Accounting</h3>
-                        <p>Invoice processing, bank reconciliation, expense automation.</p><a
-                            href="industries/finance-accounting.html" class="ind-link">View services →</a>
-                    </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#4338CA"></div>
-                    <div>
-                        <h3>Legal</h3>
-                        <p>Contract review, deadline tracking, client intake automation.</p><a
-                            href="industries/legal.html" class="ind-link">View services →</a>
-                    </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#EA580C"></div>
-                    <div>
-                        <h3>Construction</h3>
-                        <p>Project tracking, permit filing, subcontractor coordination.</p><a
-                            href="industries/construction.html" class="ind-link">View services →</a>
-                    </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#0D9488"></div>
-                    <div>
-                        <h3>Electrical &amp; Trades</h3>
-                        <p>Job quoting, dispatch scheduling, digital job cards.</p><a
-                            href="industries/electrical-trades.html" class="ind-link">View services →</a>
-                    </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#0891B2"></div>
-                    <div>
-                        <h3>Healthcare</h3>
-                        <p>Appointment reminders, patient intake, billing automation.</p><a
-                            href="industries/healthcare.html" class="ind-link">View services →</a>
-                    </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#059669"></div>
-                    <div>
-                        <h3>eCommerce</h3>
-                        <p>Order management, inventory sync, abandoned cart recovery.</p><a
-                            href="industries/ecommerce.html" class="ind-link">View services →</a>
-                    </div>
-                </div>
-                <div class="ind-card reveal">
-                    <div class="ind-bar" style="background:#032E42"></div>
-                    <div>
-                        <h3>Real Estate</h3>
-                        <p>Lead follow-up, listing syndication, transaction management.</p><a
-                            href="industries/real-estate.html" class="ind-link">View services →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <script>
+            /* Cal.com embed */
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar) }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true } if (ar[0] === L) { const api = function () { p(api, arguments) }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]) } else p(cal, ar); return } p(cal, ar) } })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "45min", { origin: "https://app.cal.com" });
+            let calInit = false;
+            function openCal() { document.getElementById('cal-modal').classList.add('active'); if (!calInit) { Cal.ns["45min"]("inline", { elementOrSelector: "#my-cal-inline-45min", config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true", "theme": "light" }, calLink: "pratik-onezipp/45min" }); Cal.ns["45min"]("ui", { "hideEventTypeDetails": false, "layout": "month_view", "styles": { "branding": { "brandColor": "#E14F37" } }, "hideBanner": true }); calInit = true } }
+            function closeCal(e) { if (e && e.target !== e.currentTarget) return; document.getElementById('cal-modal').classList.remove('active') }
 
-    <!-- === PROCESS === -->
-    <section class="process section-pad" id="process">
-        <div class="container">
-            <div class="section-head">
-                <div class="accent-line"></div>
-                <h2>From first call to live automation in 14 days</h2>
-            </div>
-            <div class="timeline">
-                <div class="step reveal">
-                    <div class="step-num">1</div>
-                    <h3>Discover</h3>
-                    <p>Free 30-min call to map your workflows and identify the highest-impact automations.</p>
-                </div>
-                <div class="step reveal">
-                    <div class="step-num">2</div>
-                    <h3>Design</h3>
-                    <p>Detailed blueprint with workflow diagrams and tool recommendations.</p>
-                </div>
-                <div class="step reveal">
-                    <div class="step-num">3</div>
-                    <h3>Build</h3>
-                    <p>We build, test, and iterate using n8n, Make, or Zapier — whichever fits your stack.</p>
-                </div>
-                <div class="step reveal">
-                    <div class="step-num">4</div>
-                    <h3>Deploy</h3>
-                    <p>Go live with 30 days of free support. Your automation runs 24/7.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- === CTA === -->
-    <section class="cta section-pad" id="contact">
-        <div class="container">
-            <h2>Ready to simplify your workflows?</h2>
-            <p>Book a free 45-minute discovery call. We'll map your processes and show you exactly what we'd automate.
-            </p>
-            <button class="btn-cta" onclick="openCal()">Schedule a Call</button>
-        </div>
-    </section>
-
-    <!-- === FAQ === -->
-    <section class="faq section-pad" id="faq">
-        <div class="container">
-            <div class="section-head">
-                <div class="accent-line"></div>
-                <h2>Frequently Asked Questions</h2>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-q">What does Onezipp do?<svg width="18" height="18" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg></button>
-                    <div class="faq-a">
-                        <p>Onezipp helps businesses connect platforms, automate processes, and reduce manual workloads
-                            with AI-powered automation. We build secure, scalable, and customisable solutions tailored
-                            to your business needs.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q">Do you offer a free trial?<svg width="18" height="18" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg></button>
-                    <div class="faq-a">
-                        <p>Yes! We provide a complimentary 3-day trial once your project is approved so you can
-                            experience our automation systems with zero cost or risk.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q">Is my data secure with Onezipp?<svg width="18" height="18" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg></button>
-                    <div class="faq-a">
-                        <p>Absolutely. Our infrastructure is built with enterprise-grade security and compliance,
-                            including SOC-2, ISO, and GDPR standards, to keep your data safe.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q">Can Onezipp's automation be customised for my business?<svg width="18"
-                            height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg></button>
-                    <div class="faq-a">
-                        <p>Yes. We specialise in custom AI agent engineering and tailored automation pipelines designed
-                            around your goals, workflows, and industry requirements.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q">What kind of support do you provide?<svg width="18" height="18"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg></button>
-                    <div class="faq-a">
-                        <p>We offer end-to-end support — from onboarding and setup to ongoing optimisation. Our team
-                            ensures your automation runs smoothly and scales as your business grows.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q">How quickly can I get started?<svg width="18" height="18" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg></button>
-                    <div class="faq-a">
-                        <p>Our onboarding is simple. Once we collect the required information, we can begin building and
-                            deploying your automation systems within 14 days.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q">Do you offer a money-back guarantee?<svg width="18" height="18"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg></button>
-                    <div class="faq-a">
-                        <p>Yes. If you're not satisfied with our solutions, we provide unlimited revisions on design
-                            work and a money-back guarantee for peace of mind.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q">Who can benefit from Onezipp's automation?<svg width="18" height="18"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg></button>
-                    <div class="faq-a">
-                        <p>Any modern business — whether a startup, small business, or enterprise — that wants to save
-                            time, reduce costs, and scale operations with intelligent automation.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- === FOOTER === -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="https://onezipp.com/wp-content/uploads/2025/08/onezipp-new-01.png" alt="Onezipp">
-                    <p>Custom workflow automation powered by n8n, Claude AI, Make.com & GoHighLevel. Enterprise-grade
-                        security. Live in 2 weeks.</p>
-                    <div class="footer-social">
-                        <a href="https://www.linkedin.com/company/onezipp-norge-as/" target="_blank"
-                            aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
-                                <rect x="2" y="9" width="4" height="12" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg></a>
-                        <a href="mailto:Connect@onezipp.com" aria-label="Email"><svg width="16" height="16"
-                                viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
-                                <rect x="2" y="4" width="20" height="16" rx="2" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="industries/hr-recruitment.html">HR & Recruitment</a></li>
-                        <li><a href="industries/tech-it.html">Tech & IT</a></li>
-                        <li><a href="industries/marketing-growth.html">Marketing & Growth</a></li>
-                        <li><a href="industries/finance-accounting.html">Finance & Accounting</a></li>
-                        <li><a href="industries/healthcare.html">Healthcare</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>More Industries</h4>
-                    <ul>
-                        <li><a href="industries/legal.html">Legal</a></li>
-                        <li><a href="industries/construction.html">Construction</a></li>
-                        <li><a href="industries/electrical-trades.html">Electrical & Trades</a></li>
-                        <li><a href="industries/ecommerce.html">eCommerce</a></li>
-                        <li><a href="industries/real-estate.html">Real Estate</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#why">Why Onezipp?</a></li>
-                        <li><a href="#process">Our Process</a></li>
-                        <li><a href="founder.html">Meet the Founder</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="mailto:Connect@onezipp.com">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span class="footer-copy">© 2026 Onezipp Norge AS. All rights reserved.</span>
-                <div class="footer-legal">
-                    <a href="mailto:Connect@onezipp.com">Connect@onezipp.com</a>
-                    <a href="tel:+19109940870">+1 (910) 994-0870</a>
-                    <a href="tel:+447447193940">+44 74 4719 3940</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- === CAL MODAL === -->
-    <div id="cal-modal" onclick="closeCal(event)">
-        <div class="modal-box" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeCal()">✕</button>
-            <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-45min"></div>
-        </div>
-    </div>
-
-    <script>
-        /* Cal.com embed */
-        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar) }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true } if (ar[0] === L) { const api = function () { p(api, arguments) }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]) } else p(cal, ar); return } p(cal, ar) } })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "45min", { origin: "https://app.cal.com" });
-        let calInit = false;
-        function openCal() { document.getElementById('cal-modal').classList.add('active'); if (!calInit) { Cal.ns["45min"]("inline", { elementOrSelector: "#my-cal-inline-45min", config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true", "theme": "light" }, calLink: "pratik-onezipp/45min" }); Cal.ns["45min"]("ui", { "hideEventTypeDetails": false, "layout": "month_view", "styles": { "branding": { "brandColor": "#E14F37" } }, "hideBanner": true }); calInit = true } }
-        function closeCal(e) { if (e && e.target !== e.currentTarget) return; document.getElementById('cal-modal').classList.remove('active') }
-
-        /* Scroll reveal */
-        document.addEventListener('DOMContentLoaded', function () {
-            const els = document.querySelectorAll('.reveal');
-            if ('IntersectionObserver' in window) {
-                const obs = new IntersectionObserver(function (entries) { entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target) } }) }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
-                els.forEach(function (el) { obs.observe(el) });
-            } else { els.forEach(function (el) { el.classList.add('visible') }) }
-        });
-
-        /* Dynamic header */
-        // Sticky Capsule Navigation Logic
-        const navWrapper = document.querySelector('.nav-wrapper');
-        const capsuleNav = document.getElementById('capsuleNav');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                capsuleNav.classList.add('visible');
-            } else {
-                capsuleNav.classList.remove('visible');
-            }
-        });
-
-        // Modals & Menu
-        function openCal() { document.getElementById('cal-modal').style.display = 'flex'; setTimeout(() => document.getElementById('cal-modal').classList.add('show'), 10) }
-        function closeCal() { document.getElementById('cal-modal').classList.remove('show'); setTimeout(() => document.getElementById('cal-modal').style.display = 'none', 300) }
-
-        // Hide standard nav on scroll
-        let lastY = window.scrollY; const nav = document.getElementById('navbar');
-        window.addEventListener('scroll', () => { if (window.scrollY > lastY && window.scrollY > 120) { nav.classList.add('hide') } else { nav.classList.remove('hide') } lastY = window.scrollY });
-
-        /* FAQ accordion */
-        document.querySelectorAll('.faq-q').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var item = this.parentElement;
-                /* Close other open items */
-                document.querySelectorAll('.faq-item.open').forEach(function (el) { if (el !== item) el.classList.remove('open') });
-                item.classList.toggle('open');
+            /* Scroll reveal */
+            document.addEventListener('DOMContentLoaded', function () {
+                const els = document.querySelectorAll('.reveal');
+                if ('IntersectionObserver' in window) {
+                    const obs = new IntersectionObserver(function (entries) { entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target) } }) }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+                    els.forEach(function (el) { obs.observe(el) });
+                } else { els.forEach(function (el) { el.classList.add('visible') }) }
             });
-        });
 
-        /* Meta Pixel: Track CTA clicks as Lead events */
-        document.querySelectorAll('.btn-cta').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                if (typeof fbq === 'function') fbq('track', 'Lead');
+            /* Dynamic header */
+            // Sticky Capsule Navigation Logic
+            const navWrapper = document.querySelector('.nav-wrapper');
+            const capsuleNav = document.getElementById('capsuleNav');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    capsuleNav.classList.add('visible');
+                } else {
+                    capsuleNav.classList.remove('visible');
+                }
             });
-        });
-    </script>
+
+            // Modals & Menu
+            function openCal() { document.getElementById('cal-modal').style.display = 'flex'; setTimeout(() => document.getElementById('cal-modal').classList.add('show'), 10) }
+            function closeCal() { document.getElementById('cal-modal').classList.remove('show'); setTimeout(() => document.getElementById('cal-modal').style.display = 'none', 300) }
+
+            // Hide standard nav on scroll
+            let lastY = window.scrollY; const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', () => { if (window.scrollY > lastY && window.scrollY > 120) { nav.classList.add('hide') } else { nav.classList.remove('hide') } lastY = window.scrollY });
+
+            /* FAQ accordion */
+            document.querySelectorAll('.faq-q').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var item = this.parentElement;
+                    /* Close other open items */
+                    document.querySelectorAll('.faq-item.open').forEach(function (el) { if (el !== item) el.classList.remove('open') });
+                    item.classList.toggle('open');
+                });
+            });
+
+            /* Meta Pixel: Track CTA clicks as Lead events */
+            document.querySelectorAll('.btn-cta').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    if (typeof fbq === 'function') fbq('track', 'Lead');
+                });
+            });
+        </script>
 </body>
 
 </html>
